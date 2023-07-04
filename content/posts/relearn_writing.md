@@ -1,6 +1,6 @@
 ---
 title: "Relearning Writing"
-date: 2023-07-04T12:31:24-04:00
+date: 2023-06-02T12:31:24-04:00
 draft: false
 ---
 
