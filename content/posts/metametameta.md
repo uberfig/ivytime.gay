@@ -26,7 +26,7 @@ This platform is yet another owned by Facebook and I would be surprised if they 
 
 I left Instagram because of the constant hate I found in comments. I constantly reported homophobia, misinformation, and conspiracy theories and this content was never taken down. Facebook seems to take a very hands off approach to moderation in lieu of maximizing their user count and engagement, there is no consideration outside of legal requirements for how this content is harmful. 
 
-On top of all this, bot and troll accounts run rampant on these platforms and with the lack of moderation it never seems to improve. 
+On top of all this, bot and troll accounts run rampant on Facebook's platforms and with the lack of moderation it never seems to improve. 
 
 Facebook has been notorious for 
 
@@ -63,3 +63,5 @@ Federation feels like an afterthought of this platform and we have seen nothing 
 for these reasons I feel a Fediverse that federates with Facebook would be one that is much less comfortable and safe for minority groups 
 
 I feel that those who are strangely eager to federate with Facebook's new platform are trying to weigh the value of growth this platform could provide against how it could negatively change the atmosphere on the Fedi. I personally feel that maintaining the Fediverse's values is much more important than blind growth. Choosing to federate with this platform right off the bat could co 
+
+I would recommend that instances defederate threads.net now to protect our community and keep it safe and welcoming for all of us
