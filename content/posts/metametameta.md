@@ -2,6 +2,7 @@
 title: "Meta Meta Meta"
 date: 2023-07-04T16:07:03-04:00
 draft: true
+description: this is a test
 ---
 
 The Fedi's biggest feature and Meta's biggest threat lies in moderation
@@ -18,50 +19,34 @@ I personally feel that Facebook's platform should be immediately defederated and
 
 ## (1) I do not believe that Facebook's platform can or will effectively moderate it's users
 
-The Fediverse takes a bottom up approach to moderation
-Instances are expected to keep on top of moderating their instance if they want to interact with the rest of the Fediverse
-If you want to present your instance, it must be presentable 
+The Fediverse takes a bottom up approach to moderation. Instances are expected to keep on top of moderating their content if they want to interact with the rest of the Fediverse. Essentially, if you want to present your instance, it must be presentable. 
 
-This platform is yet another owned by Facebook and I would be surprised if they have a moderation policy any different to that of their other platforms
+Instances should only take on as many users as they can effectively moderate as the content coming out of an instance should require minimal attention from other instances. If an instance cannot be relied on to moderate it's own content, this moderation work is offloaded to it's federated instances, each of which must now independently moderate this inflowing content. If an instance is a repeated source of unmoderated content, it's peers will usually turn to defederation.
 
-I left Instagram because of the constant hate I found in comments. I constantly reported homophobia, misinformation, and conspiracy theories and this content was never taken down. Facebook seems to take a very hands off approach to moderation in lieu of maximizing their user count and engagement, there is no consideration outside of legal requirements for how this content is harmful. 
+Large instances with poor moderation are a recipe for disaster as they cause our bottom up moderation to fall apart. By not dealing with bad accounts and content, it is left up to the mods of other instances to ban these accounts, effectively offloading the moderation onto other instances. Depending on the scale of this unmoderated server, it could quickly overwhelm small instances and either force them to defederate from the large instance and break up connections or allow for harmful content to be able to leak through. Both of these are bad options and I think that if we can see it coming, we should not federate with a bad instance in the first place. 
 
-On top of all this, bot and troll accounts run rampant on Facebook's platforms and with the lack of moderation it never seems to improve. 
+"Threads" is yet another owned by Facebook and I would be surprised if they have a moderation policy any different to that of their other platforms. I left Instagram because of the constant hate I found in comments. I constantly reported bot accounts, trolls, homophobia, misinformation, and conspiracy theories and this content was never taken down. Facebook seems to take a very hands off approach to moderation in lieu of maximizing their user count and engagement, there is no consideration outside of legal requirements for how this content is harmful. 
 
-Facebook has been notorious for 
-
-Large instances with poor moderation are a recipe for disaster as they cause our bottom up moderation to fall apart. By not dealing with bad accounts, it is left up to the mods of other instances to ban these accounts, effectively offloading the moderation onto other instances. Depending on the scale of this unmoderated server, it could quickly overwhelm small instances and either force them to defederate from the large instance and break up connections or allow for harmful content to be able to leak through. Both of these are bad options and I think that if we can see it coming, we should not federate with this large instance in the first place. 
-
-If you as an admin care about the wellbeing of your vulnerable users and the overall health of the Fediverse, you would not accept these tradeoffs. I don't know if its just me, but I like having a platform that doesn't tolerate hate, and this is one of the very few platforms where I can be confident that as a trans woman, I can open up and not find myself bombarded with homophobia.
-
-- bot spam
-- hate ~they let it slide on insta
-- misinfo and conspiracy theories 
-
-
+If you are an admin care about the wellbeing of your vulnerable users and the overall health of the Fediverse, you would not accept the tradeoffs that would come with federating with Facebook. I don't know if its just me, but I like having a platform that doesn't tolerate hate. This is one of the very few platforms where I can be confident that as a trans woman, I can open up and not find myself bombarded with homophobia. Today the Fediverse is a special place where weirdos and nerds can hang out and have valuable friendships and connections and I would hate to see this damaged by Facebook.
 
 ## (2) I feel it's unlikely that Facebook's platform will share in or copy our norms for content warning 
 
-As a community, we have built a culture of labeling content to make it more assessable and easier for people who are sensitive to specific types of content to participate. I personally feel 
-There are times where I will feel uncomfortable with eye contact and simply having an eye contact cw can make all the difference. Everything from food CWs to politics, we make this place more comfortable for everyone and I'm worried that federating with this platform will flood the Fediverse and set back our 
-I'm very concerned that Facebook's platform will not follow these simple conventions and the sheer scale of the platform will likely allow for a lot
-- food cw
-- eye contact cw
-- politics cw
+As a community, we have built a culture of labeling content to make it more assessable and easier for people who are sensitive to specific types of content to participate. There are times where I will feel uncomfortable with eye contact and simply having an eye contact cw can make all the difference for me. Everything from food CWs to CWs for sensitive politics, we make this place more comfortable for everyone. I'm very concerned that federating with this platform will flood the Fediverse and compromise our CWing culture. While this could be sorted out over time, it's unlikely that it will ever be on par with what we have now.
 
 ## (3) Facebook's platform is a centralized social media platform
 
-yes, Facebook's platform will apparently support Activitypub, but I don't think that matters.
+yes, Facebook's platform will apparently support Activitypub, but ***I don't think that matters***
 
-People who make accounts on and use Facebook's platform made accounts for that platform. 
-These accounts will be on the Fedi as long as Facebook decides to be open to federation. These accounts will all live inside one giant city and Facebook could close the gates at any time, and chances are, most of the people there wouldn't notice. Federation is just a feature of this new platform, it not the core feature like it is on Fediverse software such as mastodon. 
+People who use Facebook's platform use ***Facebook's platform***. These accounts will be on the Fedi as long as Facebook decides to be open to federation. These accounts will all live inside one giant city and Facebook could close the gates at any time, and chances are, most of the people there wouldn't notice. Federation is just a feature of this new platform, it is far from the project's core which we can clearly see with the fact that it won't even launch with Activitypub support.
 
-Federation feels like an afterthought of this platform and we have seen nothing in regards to this platform being open source or self hostable 
+I've heard a lot of talk from a few admins with a "Growth Mindset" that this could be our chance to grow the Fediverse and make it successful. Personally I think that's a load of baloney. The Fediverse is already successful, I've met so many cool people and learned a ton of cool stuff since making a mastodon account. If we try to "onboard" people from Facebook's platform, these people will be expecting an experience that is *the same as Facebook's platform*. I think that trying to "onboard" people to the Fediverse in such a manner will be largely unsuccessful because the Fediverse is not just some knock off/copy/clone of one centralized platform or another, its something new and unique. Federation and decentralization are not quirks of the Fediverse, they are the core features and trying to treat it as something else is a fool's errand. 
 
-(4) 
+## Conclusion
 
-for these reasons I feel a Fediverse that federates with Facebook would be one that is much less comfortable and safe for minority groups 
+For these reasons I feel a Fediverse that federates with Facebook would be one that is much less comfortable and safe for minority groups 
 
-I feel that those who are strangely eager to federate with Facebook's new platform are trying to weigh the value of growth this platform could provide against how it could negatively change the atmosphere on the Fedi. I personally feel that maintaining the Fediverse's values is much more important than blind growth. Choosing to federate with this platform right off the bat could co 
+I feel that those who are strangely eager to federate with Facebook's new platform are trying to weigh the value of growth this platform could provide against how it could negatively change the atmosphere on the Fedi. I personally feel that maintaining the Fediverse's values is much more important than blind growth.
 
 I would recommend that instances defederate threads.net now to protect our community and keep it safe and welcoming for all of us
+
+I would personally suggest the approach of defederate threads.net now and leaving it defederated until we know for certain that it will be properly moderated, comply with EU privacy law, and won't damage the atmosphere we've built as a community. I don't know if Facebook's platform will ever such a state, however we have gotten along perfectly well without them, why do we need them now?
