@@ -1,7 +1,7 @@
 ---
 title: "Meta Meta Meta"
 date: 2023-07-04T16:07:03-04:00
-draft: true
+draft: false
 ---
 
 The Fedi's biggest feature and Meta's biggest threat lies in moderation
