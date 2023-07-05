@@ -41,6 +41,10 @@ If you as an admin care about the wellbeing of your vulnerable users and the ove
 
 
 ## (2) I feel it's unlikely that Facebook's platform will share in or copy our norms for content warning 
+
+As a community, we have built a culture of labeling content to make it more assessable and easier for people who are sensitive to specific types of content to participate. I personally feel 
+There are times where I will feel uncomfortable with eye contact and simply having an eye contact cw can make all the difference. Everything from food CWs to politics, we make this place more comfortable for everyone and I'm worried that federating with this platform will flood the Fediverse and set back our 
+I'm very concerned that Facebook's platform will not follow these simple conventions and the sheer scale of the platform will likely allow for a lot
 - food cw
 - eye contact cw
 - politics cw
