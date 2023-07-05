@@ -18,7 +18,21 @@ I personally feel that Facebook's platform should be immediately defederated and
 
 ## (1) I do not believe that Facebook's platform can or will effectively moderate it's users
 
-The Fediverse takes a bottom up approach to moderation. 
+The Fediverse takes a bottom up approach to moderation
+Instances are expected to keep on top of moderating their instance if they want to interact with the rest of the Fediverse
+If you want to present your instance, it must be presentable 
+
+This platform is yet another owned by Facebook and I would be surprised if they have a moderation policy any different to that of their other platforms
+
+I left Instagram because of the constant hate I found in comments. I constantly reported homophobia, misinformation, and conspiracy theories and this content was never taken down. Facebook seems to take a very hands off approach to moderation in lieu of maximizing their user count and engagement, there is no consideration outside of legal requirements for how this content is harmful. 
+
+On top of all this, bot and troll accounts run rampant on these platforms and with the lack of moderation it never seems to improve. 
+
+Facebook has been notorious for 
+
+Large instances with poor moderation are a recipe for disaster as they cause our bottom up moderation to fall apart. By not dealing with bad accounts, it is left up to the mods of other instances to ban these accounts, effectively offloading the moderation onto other instances. Depending on the scale of this unmoderated server, it could quickly overwhelm small instances and either force them to defederate from the large instance and break up connections or allow for harmful content to be able to leak through. Both of these are bad options and I think that if we can see it coming, we should not federate with this large instance in the first place. 
+
+If you as an admin care about the wellbeing of your vulnerable users and the overall health of the Fediverse, you would not accept these tradeoffs. I don't know if its just me, but I like having a platform that doesn't tolerate hate, and this is one of the very few platforms where I can be confident that as a trans woman, I can open up and not find myself bombarded with homophobia.
 
 - bot spam
 - hate ~they let it slide on insta
@@ -33,7 +47,12 @@ The Fediverse takes a bottom up approach to moderation.
 
 ## (3) Facebook's platform is a centralized social media platform
 
-yes, it will apparently support Activitypub, but I don't think that matters. People who make accounts on and use Facebook's platform made accounts for that platform. These accounts will be on the Fedi as long as Facebook decides to be open to federation. These accounts will all live inside one giant city and Facebook could close the gates at any time, and chances are, most of the people there wouldn't notice. Federation is just a feature of this new platform, it not the core feature like it is on Fediverse software such as mastodon. 
+yes, Facebook's platform will apparently support Activitypub, but I don't think that matters.
+
+People who make accounts on and use Facebook's platform made accounts for that platform. 
+These accounts will be on the Fedi as long as Facebook decides to be open to federation. These accounts will all live inside one giant city and Facebook could close the gates at any time, and chances are, most of the people there wouldn't notice. Federation is just a feature of this new platform, it not the core feature like it is on Fediverse software such as mastodon. 
+
+Federation feels like an afterthought of this platform and we have seen nothing in regards to this platform being open source or self hostable 
 
 (4) 
 
