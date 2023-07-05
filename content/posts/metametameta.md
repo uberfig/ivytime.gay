@@ -2,7 +2,6 @@
 title: "Meta Meta Meta"
 date: 2023-07-04T16:07:03-04:00
 draft: true
-description: this is a test
 ---
 
 The Fedi's biggest feature and Meta's biggest threat lies in moderation
@@ -21,7 +20,7 @@ I personally feel that Facebook's platform should be immediately defederated and
 
 The Fediverse takes a bottom up approach to moderation. Instances are expected to keep on top of moderating their content if they want to interact with the rest of the Fediverse. Essentially, if you want to present your instance, it must be presentable. 
 
-Instances should only take on as many users as they can effectively moderate as the content coming out of an instance should require minimal attention from other instances. If an instance cannot be relied on to moderate it's own content, this moderation work is offloaded to it's federated instances, each of which must now independently moderate this inflowing content. If an instance is a repeated source of unmoderated content, it's peers will usually turn to defederation.
+Instances should only take on as many users as they can effectively moderate as the content coming out of an instance should require minimal attention from other instances. If an instance cannot be relied on to moderate it's own content, this moderation work is offloaded to it's federated instances, each of which must now independently moderate this inflowing content. If an instance is a repeated source of unmoderated content, its peers will usually turn to defederation.
 
 Large instances with poor moderation are a recipe for disaster as they cause our bottom up moderation to fall apart. By not dealing with bad accounts and content, it is left up to the mods of other instances to ban these accounts, effectively offloading the moderation onto other instances. Depending on the scale of this unmoderated server, it could quickly overwhelm small instances and either force them to defederate from the large instance and break up connections or allow for harmful content to be able to leak through. Both of these are bad options and I think that if we can see it coming, we should not federate with a bad instance in the first place. 
 
@@ -49,4 +48,4 @@ I feel that those who are strangely eager to federate with Facebook's new platfo
 
 I would recommend that instances defederate threads.net now to protect our community and keep it safe and welcoming for all of us
 
-I would personally suggest the approach of defederate threads.net now and leaving it defederated until we know for certain that it will be properly moderated, comply with EU privacy law, and won't damage the atmosphere we've built as a community. I don't know if Facebook's platform will ever such a state, however we have gotten along perfectly well without them, why do we need them now?
+I would personally suggest the approach of defederate threads.net now and leaving it defederated until we know for certain that it will be properly moderated, comply with EU privacy law, and won't damage the atmosphere we've built as a community. I don't know if Facebook's platform will ever reach such a state, however we have gotten along perfectly well without them, why do we need them now?
