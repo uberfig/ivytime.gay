@@ -1,6 +1,6 @@
 ---
 title: "Meta Meta Meta"
-date: 2023-07-04T16:07:03-04:00
+date: 2023-07-05T16:07:03-04:00
 draft: false
 ---
 
