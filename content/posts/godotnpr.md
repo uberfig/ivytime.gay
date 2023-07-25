@@ -4,7 +4,7 @@ date: 2023-07-25T13:26:08-04:00
 draft: false
 ---
 
-When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from games from scratch and I tried my hand at replicating it in godot
+When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
