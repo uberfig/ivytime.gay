@@ -17,9 +17,9 @@ the following shader is handles the sobel filtering for both the depth and norma
 
 ![arm overlap](/img/OverlapArm.png "test")
 
-for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it
-
 ## sobel filtering
+
+for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it
 
 ```glsl
 shader_type spatial;
