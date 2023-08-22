@@ -1,8 +1,8 @@
----
-title: "My First Post"
-date: 2023-07-04T11:46:17-04:00
-draft: true
----
++++
+title= "My First Post"
+date= 2023-07-04
+draft= true
++++
 ## Introduction
 
 This is **bold** text, and this is *emphasized* text.

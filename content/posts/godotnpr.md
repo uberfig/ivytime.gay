@@ -1,14 +1,12 @@
----
-title: "A little dive into NPR shading in Godot"
-date: 2023-07-25T13:26:08-04:00
-draft: false
----
++++
+title= "A little dive into NPR shading in Godot"
+date= 2023-07-25
+draft= false
++++
 
 When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-{{< youtube id="jlKNOirh66E" >}}
 
 as it currently stands I was able to get similar behavior but I didn't quite get the same effect for shadows
 ![final result](/img/finalResult.png "test")

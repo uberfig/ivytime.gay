@@ -1,8 +1,8 @@
----
-title: "Relearning Writing"
-date: 2023-06-02T12:31:24-04:00
-draft: false
----
++++
+title= "Relearning Writing"
+date= 2023-06-02
+draft= false
++++
 
 I wrote this post on a whim and I really liked it so I thought I would mirror it here. It's also still on my mastodon profile [here](https://cutie.city/@ivy/110472695040363825)
 

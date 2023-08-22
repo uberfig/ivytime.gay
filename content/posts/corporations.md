@@ -1,8 +1,8 @@
----
-title: "I'm Tired Of Corporations"
-date: 2023-06-11T12:46:15-04:00
-draft: false
----
++++
+title= "I'm Tired Of Corporations"
+date= 2023-06-11
+draft= false
++++
 
 mirrored from [mastodon](https://cutie.city/@ivy/110523929241532214)
 

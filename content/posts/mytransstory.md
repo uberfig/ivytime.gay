@@ -1,8 +1,8 @@
----
-title: "My 'Trans Story'"
-date: 2023-06-23T12:36:49-04:00
-draft: false
----
++++
+title= "My 'Trans Story'"
+date= 2023-06-23
+draft= false
++++
 
 mirrored from [mastodon](https://cutie.city/@ivy/110591582134325352)
 

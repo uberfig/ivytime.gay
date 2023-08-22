@@ -1,8 +1,8 @@
----
-title: "I Have A Blog Now"
-date: 2023-07-04T12:19:49-04:00
-draft: false
----
++++
+title= "I Have A Blog Now"
+date= 2023-07-04
+draft= false
++++
 
 With all the craziness of Facebook's new platform and my tendency to post loooong posts from time to time, I thought it would be a good idea to put things here. I don’t really have a posting schedule or anything all that formal, I’ll just put things here when I think they’re important or if I want to archive it
 

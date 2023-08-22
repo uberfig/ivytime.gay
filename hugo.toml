@@ -1,5 +1,0 @@
-baseURL = 'https://ivytime.gay/'
-languageCode = 'en-us'
-title = "Ivy's Blog"
-theme = 'ananke'
-favicon = "favicon.ico"

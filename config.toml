@@ -1,40 +1,43 @@
-title = "Ivy's Blog"
-baseURL = "https://ivytime.gay/"
-languageCode = "en-us"
-theme = "ananke"
-resourceDir = "../resources"
+# The URL the site will be built for
+base_url = "https://ivytime.gay"
 
-DefaultContentLanguage = "en"
-SectionPagesMenu = "main"
-Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
-enableRobotsTXT = true
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
 
-[languages]
-  [languages.en]
-    title = "Ananke"
-    weight = 1
-    contentDir = "content/en"
-    # languageDirection = 'rtl' for Right-To-Left languages
-  [languages.fr]
-    title = "Ananke Fr"
-    weight = 2
-    contentDir = "content/fr"
+# The default language; used in feeds.
+default_language = "en"
 
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
+# Whether to build a search index to be used later on by a JavaScript library
+# build_search_index = true
 
-[params]
-  text_color = ""
-  author = "Ivy🏳️‍⚧️"
-  favicon = "favicon.ico"
-  site_logo = ""
-  description = "The last theme you'll ever need. Maybe."
-  # choose a background color from any on this page: https://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-pink"
-  recent_posts_number = 3
+# When set to "true", a feed is automatically generated.
+generate_feed = false
 
-[[params.ananke_socials]]
-name = "twitter"
-url = "https://twitter.com/GoHugoIO"
+# The filename to use for the feed. Used as the template filename, too.
+# Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
+# There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
+feed_filename = "atom.xml"
+
+# The number of articles to include in the feed. All items are included if
+# this limit is not set (the default).
+# feed_limit = 20
+
+# When set to "true", a search index is built from the pages and section
+# content for `default_language`.
+build_search_index = false
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+
+# The theme to use for code highlighting.
+# See below for list of allowed values.
+# https://www.getzola.org/documentation/getting-started/configuration/#syntax-highlighting
+highlight_theme = "dracula"
+
+[extra]
+# Put all your custom variables here
+site_name = "Ivy's Blog"
+year = "2023"
