@@ -129,11 +129,13 @@ article {
         color: $accentColor;
     }
 
-    pre {
+    code{
         font-family: 'Courier New', Courier, monospace;
         font-weight: 100;
         font-size: 24px;
-        
+    }
+
+    pre {
         border-radius: 4px;
         padding: 0.6rem;
         background-color: $backgroundDeep;
