@@ -10,11 +10,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  actions: write
-  checks: write
-  deployments: write
-  packages: write
-  statuses: write
 
 jobs:
   build:
