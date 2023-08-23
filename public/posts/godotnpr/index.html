@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ivy&#x27;s Blog</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<nav>
+  <a class="logo" href="https://ivytime.gay">Ivy&#x27;s Blog</a>
+</nav>
+
+<body>
+  <section class="section">
+    <div class="container">
+      
+<article>
+<h1 class="title">
+  A little dive into NPR shading in Godot
+</h1>
+<p class="subtitle"><strong>2023-07-25</strong></p>
+
+<p>When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p>as it currently stands I was able to get similar behavior but I didn't quite get the same effect for shadows
+<img src="/img/finalResult.png" alt="final result" title="test" /></p>
+<p>the following shader is handles the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense</p>
+<p><img src="/img/OverlapArm.png" alt="arm overlap" title="test" /></p>
+<h2 id="sobel-filtering">sobel filtering</h2>
+<p>for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it</p>
+<pre data-lang="glsl" style="background-color:#282a36;color:#f8f8f2;" class="language-glsl "><code class="language-glsl" data-lang="glsl"><span>shader_type spatial;
+</span><span>render_mode unshaded, cull_disabled;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> DEPTH_TEXTURE : hint_depth_texture, filter_nearest;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> NORMAL_TEXTURE : hint_normal_roughness_texture, filter_nearest;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> line_color : source_color;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> noise_intensity </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0.5</span><span>;
+</span><span>
+</span><span style="color:#6272a4;">//a noise texture shopuld be provided here for the wobbly line effect
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> noise;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">bool</span><span> use_noise </span><span style="color:#ff79c6;">=</span><span> true;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> normalcutoff </span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0.001</span><span>;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> depthcutoff </span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0.018</span><span>;
+</span><span>
+</span><span style="color:#6272a4;">//values used for the sobel filter
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">mat3</span><span> sx </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">mat3</span><span>(
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3 </span><span>(</span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#bd93f9;">2.0</span><span>, </span><span style="color:#bd93f9;">1.0</span><span>), 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>), 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">2.0</span><span>, </span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1.0</span><span>)
+</span><span>);
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">mat3</span><span> sy </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">mat3</span><span>(
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3 </span><span>(</span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1.0</span><span>), 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">2.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">2.0</span><span>), 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1.0</span><span>)
+</span><span>);
+</span><span>
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">void </span><span style="color:#50fa7b;">vertex</span><span>()</span><span style="color:#ffffff;">{
+</span><span>	VERTEX </span><span style="color:#ff79c6;">*= </span><span style="color:#bd93f9;">2.0</span><span>;
+</span><span>	POSITION </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec4</span><span>(VERTEX, </span><span style="color:#bd93f9;">1.0</span><span>);
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="color:#6272a4;">//fragcoord is the xy pixel coord of a frag
+</span><span style="color:#6272a4;">//screen uv is is the xy uv coord of a frag (from 0 to 1)
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="color:#50fa7b;">fragToScreenUV</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="font-style:italic;color:#ffb86c;">fc</span><span>, </span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="font-style:italic;color:#ffb86c;">vpsize</span><span>)</span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec2</span><span> uv </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec2</span><span>(fc</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">x</span><span style="color:#ff79c6;">/</span><span>vpsize</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">x</span><span>, fc</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">y</span><span style="color:#ff79c6;">/</span><span>vpsize</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">y</span><span>);
+</span><span>	</span><span style="color:#ff79c6;">return</span><span> uv;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="color:#50fa7b;">ScreenUVtoFrag</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="font-style:italic;color:#ffb86c;">uv</span><span>, </span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="font-style:italic;color:#ffb86c;">vpsize</span><span>)</span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec2</span><span> fc </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec2</span><span>(uv</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">x</span><span style="color:#ff79c6;">*</span><span>vpsize</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">x</span><span>, uv</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">y</span><span style="color:#ff79c6;">*</span><span>vpsize</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">y</span><span>);
+</span><span>	</span><span style="color:#ff79c6;">return</span><span> fc;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">float </span><span style="color:#50fa7b;">getDepth</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="font-style:italic;color:#ffb86c;">SC_UV</span><span>, </span><span style="font-style:italic;color:#8be9fd;">float </span><span style="font-style:italic;color:#ffb86c;">proj32</span><span>, </span><span style="font-style:italic;color:#8be9fd;">float </span><span style="font-style:italic;color:#ffb86c;">proj22</span><span>)</span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> depth </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">texture</span><span>(DEPTH_TEXTURE, SC_UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">r</span><span>;
+</span><span>	
+</span><span>	depth </span><span style="color:#ff79c6;">=</span><span> depth</span><span style="color:#ff79c6;">*</span><span style="color:#bd93f9;">2.0</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1.0</span><span>;
+</span><span>	depth </span><span style="color:#ff79c6;">=</span><span> proj32 </span><span style="color:#ff79c6;">/ </span><span>(depth </span><span style="color:#ff79c6;">+</span><span> proj22);
+</span><span>	depth </span><span style="color:#ff79c6;">*= </span><span style="color:#bd93f9;">0.01</span><span>;
+</span><span>	
+</span><span>	</span><span style="color:#ff79c6;">return</span><span> depth;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">float </span><span style="color:#50fa7b;">depthSobel</span><span>(</span><span style="font-style:italic;color:#8be9fd;">ivec2 </span><span style="font-style:italic;color:#ffb86c;">fragcoord</span><span>, </span><span style="font-style:italic;color:#8be9fd;">vec2 </span><span style="font-style:italic;color:#ffb86c;">vp_size</span><span>, </span><span style="font-style:italic;color:#8be9fd;">float </span><span style="font-style:italic;color:#ffb86c;">proj32</span><span>, </span><span style="font-style:italic;color:#8be9fd;">float </span><span style="font-style:italic;color:#ffb86c;">proj22</span><span>) </span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">mat3</span><span> I;
+</span><span>	</span><span style="color:#ff79c6;">for </span><span>(</span><span style="font-style:italic;color:#8be9fd;">int</span><span> i</span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0</span><span>; i</span><span style="color:#ff79c6;">&lt;</span><span style="color:#bd93f9;">3</span><span>; i</span><span style="color:#ff79c6;">++</span><span>) </span><span style="color:#ffffff;">{
+</span><span>		</span><span style="color:#ff79c6;">for </span><span>(</span><span style="font-style:italic;color:#8be9fd;">int</span><span> j</span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0</span><span>; j</span><span style="color:#ff79c6;">&lt;</span><span style="color:#bd93f9;">3</span><span>; j</span><span style="color:#ff79c6;">++</span><span>) </span><span style="color:#ffffff;">{
+</span><span style="color:#6272a4;">//			vec3 sample  = texelFetch(tex, fragcoord + ivec2(i-1,j-1), 0 ).rgb;
+</span><span style="color:#6272a4;">//			I[i][j] = length(sample); 
+</span><span>			I[i][j] </span><span style="color:#ff79c6;">= </span><span style="color:#50fa7b;">getDepth</span><span>(</span><span style="color:#50fa7b;">fragToScreenUV</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec2</span><span>(fragcoord </span><span style="color:#ff79c6;">+ </span><span style="font-style:italic;color:#8be9fd;">ivec2</span><span>(i</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1</span><span>,j</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1</span><span>)), vp_size), proj32, proj22); 
+</span><span>		</span><span style="color:#ffffff;">}
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> gx </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">0</span><span>], I[</span><span style="color:#bd93f9;">0</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">1</span><span>], I[</span><span style="color:#bd93f9;">1</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">2</span><span>], I[</span><span style="color:#bd93f9;">2</span><span>]); 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> gy </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">0</span><span>], I[</span><span style="color:#bd93f9;">0</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">1</span><span>], I[</span><span style="color:#bd93f9;">1</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">2</span><span>], I[</span><span style="color:#bd93f9;">2</span><span>]);
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> g </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">sqrt</span><span>(</span><span style="color:#8be9fd;">pow</span><span>(gx, </span><span style="color:#bd93f9;">2.0</span><span>)</span><span style="color:#ff79c6;">+</span><span style="color:#8be9fd;">pow</span><span>(gy, </span><span style="color:#bd93f9;">2.0</span><span>));
+</span><span>	</span><span style="color:#ff79c6;">return</span><span> g;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">float </span><span style="color:#50fa7b;">normalSobel</span><span>(</span><span style="font-style:italic;color:#8be9fd;">ivec2 </span><span style="font-style:italic;color:#ffb86c;">fragcoord</span><span>, </span><span style="font-style:italic;color:#8be9fd;">sampler2D </span><span style="font-style:italic;color:#ffb86c;">tex</span><span>) </span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">mat3</span><span> I;
+</span><span>	</span><span style="color:#ff79c6;">for </span><span>(</span><span style="font-style:italic;color:#8be9fd;">int</span><span> i</span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0</span><span>; i</span><span style="color:#ff79c6;">&lt;</span><span style="color:#bd93f9;">3</span><span>; i</span><span style="color:#ff79c6;">++</span><span>) </span><span style="color:#ffffff;">{
+</span><span>		</span><span style="color:#ff79c6;">for </span><span>(</span><span style="font-style:italic;color:#8be9fd;">int</span><span> j</span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0</span><span>; j</span><span style="color:#ff79c6;">&lt;</span><span style="color:#bd93f9;">3</span><span>; j</span><span style="color:#ff79c6;">++</span><span>) </span><span style="color:#ffffff;">{
+</span><span>			</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> sample  </span><span style="color:#ff79c6;">= </span><span style="color:#50fa7b;">texelFetch</span><span>(tex, fragcoord </span><span style="color:#ff79c6;">+ </span><span style="font-style:italic;color:#8be9fd;">ivec2</span><span>(i</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1</span><span>,j</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1</span><span>), </span><span style="color:#bd93f9;">0 </span><span>)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">rgb</span><span>;
+</span><span>			I[i][j] </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">length</span><span>(sample); 
+</span><span style="color:#6272a4;">//			I[i][j] = sample.r; 
+</span><span>		</span><span style="color:#ffffff;">}
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> gx </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">0</span><span>], I[</span><span style="color:#bd93f9;">0</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">1</span><span>], I[</span><span style="color:#bd93f9;">1</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">2</span><span>], I[</span><span style="color:#bd93f9;">2</span><span>]); 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> gy </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">0</span><span>], I[</span><span style="color:#bd93f9;">0</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">1</span><span>], I[</span><span style="color:#bd93f9;">1</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">2</span><span>], I[</span><span style="color:#bd93f9;">2</span><span>]);
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> g </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">sqrt</span><span>(</span><span style="color:#8be9fd;">pow</span><span>(gx, </span><span style="color:#bd93f9;">2.0</span><span>)</span><span style="color:#ff79c6;">+</span><span style="color:#8be9fd;">pow</span><span>(gy, </span><span style="color:#bd93f9;">2.0</span><span>));
+</span><span style="color:#6272a4;">//	float g = max(gx, gy);
+</span><span>	</span><span style="color:#ff79c6;">return</span><span> g;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">float </span><span style="color:#50fa7b;">sobel</span><span>(</span><span style="font-style:italic;color:#8be9fd;">ivec2 </span><span style="font-style:italic;color:#ffb86c;">fragcoord</span><span>, </span><span style="font-style:italic;color:#8be9fd;">sampler2D </span><span style="font-style:italic;color:#ffb86c;">tex</span><span>) </span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">mat3</span><span> I;
+</span><span>	</span><span style="color:#ff79c6;">for </span><span>(</span><span style="font-style:italic;color:#8be9fd;">int</span><span> i</span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0</span><span>; i</span><span style="color:#ff79c6;">&lt;</span><span style="color:#bd93f9;">3</span><span>; i</span><span style="color:#ff79c6;">++</span><span>) </span><span style="color:#ffffff;">{
+</span><span>		</span><span style="color:#ff79c6;">for </span><span>(</span><span style="font-style:italic;color:#8be9fd;">int</span><span> j</span><span style="color:#ff79c6;">=</span><span style="color:#bd93f9;">0</span><span>; j</span><span style="color:#ff79c6;">&lt;</span><span style="color:#bd93f9;">3</span><span>; j</span><span style="color:#ff79c6;">++</span><span>) </span><span style="color:#ffffff;">{
+</span><span>			</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> sample  </span><span style="color:#ff79c6;">= </span><span style="color:#50fa7b;">texelFetch</span><span>(tex, fragcoord </span><span style="color:#ff79c6;">+ </span><span style="font-style:italic;color:#8be9fd;">ivec2</span><span>(i</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1</span><span>,j</span><span style="color:#ff79c6;">-</span><span style="color:#bd93f9;">1</span><span>), </span><span style="color:#bd93f9;">0 </span><span>)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">rgb</span><span>;
+</span><span>			I[i][j] </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">length</span><span>(sample); 
+</span><span>		</span><span style="color:#ffffff;">}
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> gx </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">0</span><span>], I[</span><span style="color:#bd93f9;">0</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">1</span><span>], I[</span><span style="color:#bd93f9;">1</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sx[</span><span style="color:#bd93f9;">2</span><span>], I[</span><span style="color:#bd93f9;">2</span><span>]); 
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> gy </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">0</span><span>], I[</span><span style="color:#bd93f9;">0</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">1</span><span>], I[</span><span style="color:#bd93f9;">1</span><span>]) </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(sy[</span><span style="color:#bd93f9;">2</span><span>], I[</span><span style="color:#bd93f9;">2</span><span>]);
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> g </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">sqrt</span><span>(</span><span style="color:#8be9fd;">pow</span><span>(gx, </span><span style="color:#bd93f9;">2.0</span><span>)</span><span style="color:#ff79c6;">+</span><span style="color:#8be9fd;">pow</span><span>(gy, </span><span style="color:#bd93f9;">2.0</span><span>));
+</span><span style="color:#6272a4;">//	float g = max(gx, gy);
+</span><span>	</span><span style="color:#ff79c6;">return</span><span> g;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">void </span><span style="color:#50fa7b;">fragment</span><span>()</span><span style="color:#ffffff;">{
+</span><span>	
+</span><span style="color:#6272a4;">//	vec2 sampleFrag = FRAGCOORD.xy + texture(noise,SCREEN_UV).rg;
+</span><span style="color:#6272a4;">//	vec2 sampleUV = SCREEN_UV + texture(noise,SCREEN_UV).rg;
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec2</span><span> sampleUV;
+</span><span>	</span><span style="color:#ff79c6;">if </span><span>(use_noise) </span><span style="color:#ffffff;">{
+</span><span>		sampleUV </span><span style="color:#ff79c6;">=</span><span> SCREEN_UV </span><span style="color:#ff79c6;">+ </span><span>((</span><span style="color:#8be9fd;">texture</span><span>(noise,SCREEN_UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">rg </span><span style="color:#ff79c6;">- </span><span style="font-style:italic;color:#8be9fd;">vec2</span><span>(</span><span style="color:#bd93f9;">0.5</span><span>,</span><span style="color:#bd93f9;">0.5</span><span>)) </span><span style="color:#ff79c6;">*</span><span> noise_intensity </span><span style="color:#ff79c6;">/ </span><span style="color:#bd93f9;">255.0</span><span>);
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>		sampleUV </span><span style="color:#ff79c6;">=</span><span> SCREEN_UV;
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> g1 </span><span style="color:#ff79c6;">= </span><span style="color:#50fa7b;">normalSobel</span><span>(</span><span style="font-style:italic;color:#8be9fd;">ivec2</span><span>(sampleFrag), NORMAL_TEXTURE);
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> g2 </span><span style="color:#ff79c6;">= </span><span style="color:#50fa7b;">depthSobel</span><span>(</span><span style="font-style:italic;color:#8be9fd;">ivec2</span><span>(sampleFrag), VIEWPORT_SIZE,PROJECTION_MATRIX[</span><span style="color:#bd93f9;">3</span><span>][</span><span style="color:#bd93f9;">2</span><span>],PROJECTION_MATRIX[</span><span style="color:#bd93f9;">2</span><span>][</span><span style="color:#bd93f9;">2</span><span>]);
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> depth </span><span style="color:#ff79c6;">= </span><span style="color:#50fa7b;">getDepth</span><span>(</span><span style="color:#50fa7b;">fragToScreenUV</span><span>(FRAGCOORD</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">xy</span><span>,VIEWPORT_SIZE),PROJECTION_MATRIX[</span><span style="color:#bd93f9;">3</span><span>][</span><span style="color:#bd93f9;">2</span><span>],PROJECTION_MATRIX[</span><span style="color:#bd93f9;">2</span><span>][</span><span style="color:#bd93f9;">2</span><span>]);
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> dcutt </span><span style="color:#ff79c6;">=</span><span> depthcutoff</span><span style="color:#ff79c6;">*</span><span>depth;
+</span><span>	
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">float</span><span> n_cutt </span><span style="color:#ff79c6;">=</span><span> normalcutoff</span><span style="color:#ff79c6;">/</span><span>depth</span><span style="color:#ff79c6;">*</span><span style="color:#bd93f9;">0.01</span><span>;
+</span><span>	
+</span><span>	</span><span style="color:#ff79c6;">if </span><span>(g2</span><span style="color:#ff79c6;">&gt;</span><span>dcutt) </span><span style="color:#ffffff;">{
+</span><span>		ALBEDO </span><span style="color:#ff79c6;">=</span><span> line_color;
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else if </span><span>(g1</span><span style="color:#ff79c6;">&gt;</span><span>n_cutt) </span><span style="color:#ffffff;">{
+</span><span>		ALBEDO </span><span style="color:#ff79c6;">=</span><span> line_color;
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>		</span><span style="color:#6272a4;">//you can swap between these to see the normal buffers and depth buffers with this shader applied
+</span><span style="color:#6272a4;">//		ALBEDO = texture(NORMAL_TEXTURE, sampleUV).rgb;
+</span><span>		ALBEDO </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">texture</span><span>(SCREEN_TEXTURE, sampleUV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">rgb</span><span>; 
+</span><span style="color:#6272a4;">//		ALBEDO = vec3(depth);
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span style="color:#6272a4;">//	ALBEDO = texture(NORMAL_TEXTURE, sampleUV).rgb;
+</span><span style="color:#ffffff;">}
+</span></code></pre>
+<p>for the noise texture, I would recommend a new noisetexture2d  with fastnoiselite creating perlin noise with a frequency around 0.049</p>
+<p>whatever you wind up doing, I would recommend using soft and gradual noise to give the lines a more gradual waves in the final output</p>
+<h2 id="solid-color-shader">solid color shader</h2>
+<p>when working with curved geometry, the sobel filter will overreact and draw over it more than nessary. we can eliminate this by setting the solid norm property which will set the normal map to a solid color. this may make your lighting act a bit strange, but it shouldn't be too noticeable. Once godot gets support for a stencil buffer, this could be solved in a better way, but if anyone has an idea for a cleaner workaround, feel free to open an issue on my blog's github <a href="https://github.com/uberfig/ivytime.gay/issues">here</a></p>
+<p>pictured is solid norm on the left and without it on the right
+<img src="/img/comparison.png" alt="comparison" title="compare" /></p>
+<pre data-lang="glsl" style="background-color:#282a36;color:#f8f8f2;" class="language-glsl "><code class="language-glsl" data-lang="glsl"><span>shader_type spatial;
+</span><span>render_mode diffuse_burley;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> color : source_color </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">1.0</span><span>);
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">bool</span><span> useLineart </span><span style="color:#ff79c6;">=</span><span> false;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">bool</span><span> useSolidNorm </span><span style="color:#ff79c6;">=</span><span> false;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> lineart : filter_nearest, source_color;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> cutoff;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> solid_norm;
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">void </span><span style="color:#50fa7b;">fragment</span><span>() </span><span style="color:#ffffff;">{
+</span><span>	
+</span><span>	</span><span style="color:#ff79c6;">if </span><span>(useLineart) </span><span style="color:#ffffff;">{
+</span><span>		</span><span style="font-style:italic;color:#8be9fd;">float</span><span> line_intensity </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">texture</span><span>(lineart,UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">r</span><span>;
+</span><span>		</span><span style="color:#ff79c6;">if </span><span>(line_intensity </span><span style="color:#ff79c6;">&lt;</span><span> cutoff) </span><span style="color:#ffffff;">{
+</span><span>			ALBEDO </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.07</span><span>);
+</span><span>			NORMAL </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.1</span><span>);
+</span><span>		</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>			ALBEDO </span><span style="color:#ff79c6;">=</span><span> color;
+</span><span>			NORMAL </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(solid_norm);
+</span><span>		</span><span style="color:#ffffff;">}
+</span><span>		
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>		ALBEDO </span><span style="color:#ff79c6;">=</span><span> color;
+</span><span>		</span><span style="color:#ff79c6;">if </span><span>(useSolidNorm)</span><span style="color:#ffffff;">{
+</span><span>			NORMAL </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(solid_norm);
+</span><span>		</span><span style="color:#ffffff;">}
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span>	
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> cutt1 </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0.1</span><span>;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> cutt2 </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0.05</span><span>;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> cutt3 </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0.01</span><span>;
+</span><span style="font-style:italic;color:#8be9fd;">void </span><span style="color:#50fa7b;">light</span><span>() </span><span style="color:#ffffff;">{
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> diffused </span><span style="color:#ff79c6;">=</span><span> DIFFUSE_LIGHT </span><span style="color:#ff79c6;">+ </span><span style="color:#8be9fd;">dot</span><span>(NORMAL, LIGHT) </span><span style="color:#ff79c6;">*</span><span> ATTENUATION </span><span style="color:#ff79c6;">*</span><span> ALBEDO;
+</span><span>	</span><span style="color:#ff79c6;">if </span><span>(</span><span style="color:#8be9fd;">length</span><span>(diffused) </span><span style="color:#ff79c6;">&gt;</span><span> cutt1) </span><span style="color:#ffffff;">{
+</span><span>		DIFFUSE_LIGHT </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">1</span><span>);
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else if </span><span>(</span><span style="color:#8be9fd;">length</span><span>(diffused) </span><span style="color:#ff79c6;">&gt;</span><span> cutt2) </span><span style="color:#ffffff;">{
+</span><span>		DIFFUSE_LIGHT </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.5</span><span>);
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else if </span><span>(</span><span style="color:#8be9fd;">length</span><span>(diffused) </span><span style="color:#ff79c6;">&gt;</span><span> cutt3) </span><span style="color:#ffffff;">{
+</span><span>		DIFFUSE_LIGHT </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.2</span><span>);
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>		DIFFUSE_LIGHT </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0</span><span>);
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span style="color:#ffffff;">}
+</span></code></pre>
+<h2 id="2d-billboard-shader">2d billboard shader</h2>
+<p>this is a useful little shader that you can use to incorporate 2d sprites into the scene. If you keep your lineart and coloring on seperate layers in your drawing platform of choice, you can punch these both into the texture and lineart properties and it will draw the lineart onto the sprite like the 3d lineart. This shader will also make the sprite turn to face the camera along the z axis, there seems to be a bit of an issue with looking at it from behind but this could be worked around by making a copy and rotating it 180° so that one is always visible </p>
+<pre data-lang="glsl" style="background-color:#282a36;color:#f8f8f2;" class="language-glsl "><code class="language-glsl" data-lang="glsl"><span>shader_type spatial;
+</span><span>render_mode unshaded, cull_disabled;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> _texture : filter_nearest, source_color;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> _lineart : filter_nearest, source_color;
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">sampler2D</span><span> _normal : hint_normal;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">vec4</span><span> albedo : source_color;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">bool</span><span> useLineart </span><span style="color:#ff79c6;">=</span><span> true;
+</span><span>
+</span><span style="color:#ff79c6;">uniform </span><span style="font-style:italic;color:#8be9fd;">float</span><span> cutoff : </span><span style="color:#50fa7b;">hint_range</span><span>(</span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">1.0</span><span>) </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">0.5</span><span>; 
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">void </span><span style="color:#50fa7b;">vertex</span><span>() </span><span style="color:#ffffff;">{
+</span><span>	MODELVIEW_MATRIX </span><span style="color:#ff79c6;">=</span><span> VIEW_MATRIX </span><span style="color:#ff79c6;">* </span><span style="font-style:italic;color:#8be9fd;">mat4</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec4</span><span>(</span><span style="color:#8be9fd;">normalize</span><span>(</span><span style="color:#8be9fd;">cross</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>), INV_VIEW_MATRIX[</span><span style="color:#bd93f9;">2</span><span>]</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">xyz</span><span>)), </span><span style="color:#bd93f9;">0.0</span><span>), </span><span style="font-style:italic;color:#8be9fd;">vec4</span><span>(</span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>), </span><span style="font-style:italic;color:#8be9fd;">vec4</span><span>(</span><span style="color:#8be9fd;">normalize</span><span>(</span><span style="color:#8be9fd;">cross</span><span>(INV_VIEW_MATRIX[</span><span style="color:#bd93f9;">0</span><span>]</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">xyz</span><span>, </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0.0</span><span>, </span><span style="color:#bd93f9;">1.0</span><span>, </span><span style="color:#bd93f9;">0.0</span><span>))), </span><span style="color:#bd93f9;">0.0</span><span>), MODEL_MATRIX[</span><span style="color:#bd93f9;">3</span><span>]);
+</span><span style="color:#ffffff;">}
+</span><span>
+</span><span style="font-style:italic;color:#8be9fd;">void </span><span style="color:#50fa7b;">fragment</span><span>() </span><span style="color:#ffffff;">{
+</span><span>	NORMAL_MAP </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">texture</span><span>(_normal, UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">xyz </span><span style="color:#ff79c6;">* </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">2.0</span><span>,</span><span style="color:#bd93f9;">2.0</span><span>,</span><span style="color:#bd93f9;">1.0</span><span>) </span><span style="color:#ff79c6;">- </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">1.0</span><span>,</span><span style="color:#bd93f9;">1.0</span><span>,</span><span style="color:#bd93f9;">0.0</span><span>);
+</span><span>	NORMAL_MAP_DEPTH </span><span style="color:#ff79c6;">= </span><span style="color:#bd93f9;">1.0</span><span>; </span><span style="color:#6272a4;">//float
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> tex1 </span><span style="color:#ff79c6;">=</span><span style="color:#8be9fd;">texture</span><span>(_texture,UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">rgb</span><span>;
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> tex2 </span><span style="color:#ff79c6;">=</span><span style="color:#8be9fd;">texture</span><span>(_lineart,UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">rgb</span><span>;
+</span><span>	</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span> color;
+</span><span>	</span><span style="color:#ff79c6;">if </span><span>(useLineart) </span><span style="color:#ffffff;">{
+</span><span>		</span><span style="color:#ff79c6;">if </span><span>(</span><span style="color:#8be9fd;">length</span><span>(tex2)</span><span style="color:#ff79c6;">&lt;</span><span style="color:#8be9fd;">length</span><span>(</span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(cutoff))) </span><span style="color:#ffffff;">{
+</span><span style="color:#6272a4;">//			color = tex2;
+</span><span>			color </span><span style="color:#ff79c6;">= </span><span style="font-style:italic;color:#8be9fd;">vec3</span><span>(</span><span style="color:#bd93f9;">0</span><span>);
+</span><span>		</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>			color </span><span style="color:#ff79c6;">=</span><span> tex1;
+</span><span>		</span><span style="color:#ffffff;">}
+</span><span>	</span><span style="color:#ffffff;">} </span><span style="color:#ff79c6;">else </span><span style="color:#ffffff;">{
+</span><span>		color </span><span style="color:#ff79c6;">=</span><span> tex1;
+</span><span>	</span><span style="color:#ffffff;">}
+</span><span>	ALBEDO </span><span style="color:#ff79c6;">=</span><span> color;
+</span><span>	ALPHA </span><span style="color:#ff79c6;">= </span><span style="color:#8be9fd;">texture</span><span>(_texture,UV)</span><span style="color:#ff79c6;">.</span><span style="color:#ffffff;">a</span><span>;
+</span><span style="color:#ffffff;">}
+</span><span>
+</span></code></pre>
+
+</article>
+
+    </div>
+  </section>
+</body>
+
+<footer role="contentinfo">
+  <div class="footflex">
+    <a rel="me" href="https://cutie.city/@ivy"><img src="/cutiecity.svg" alt="mastodon link"
+        style="width:32px;height:32px;"></a>
+    <a>Site © Ivy&#x27;s Blog 2023</a>
+  </div>
+</footer>
+
+</html>
