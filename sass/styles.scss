@@ -53,10 +53,22 @@ html {
     
     border-style: solid;
     border-width: 1px;
+
+    
     a {
+        font: 100% $font-stack;
+        font-size: 1rem;
+
         text-decoration: none;
         color: $fontColor;
         text-align: center;
+
+        h1 {
+            font-size: 3rem;
+        }
+        h1 {
+            font-size: 2rem;
+        }
     }
 }
 
