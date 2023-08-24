@@ -1,8 +1,10 @@
 $font-stack2: Helvetica, sans-serif;
 $font-stack: athelas, georgia, serif;
-$textColor: rgb(248, 248, 249);
+$fontColor: rgb(0, 0, 0);
 
-$backgroundColor: rgba(6, 4, 14, 0.637);
+$cardBg: rgb(211, 211, 211);
+
+$backgroundColor: rgb(228, 192, 216);
 $backgroundDeep: rgb(18, 9, 30);
 $accentColor: rgb(57, 201, 131);
 $accentScroll: rgba(125, 185, 156, 0.415);
@@ -15,6 +17,47 @@ $mutedAccent: rgb(49, 137, 96);
 // }
 html {
     font-size: 20px;
+    background-color: $backgroundColor;
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0%;
+    // align-items: center;
+
+    @media screen and (max-width: 600px) {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+}
+
+.card {
+    background-color: $cardBg;
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+
+    @media screen and (max-width: 600px) {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+    //     margin-right: 0%;
+    //     margin-left: 0%;
+    //     width: 100%;
+    }
+
+    border-radius: 1rem;
+    
+    border-style: solid;
+    border-width: 1px;
+    a {
+        text-decoration: none;
+        color: $fontColor;
+        text-align: center;
+    }
 }
 
 article {
@@ -130,7 +173,7 @@ article {
     }
 
     code{
-        font-family: 'Courier New', Courier, monospace;
+        font-family: monospace;
         font-weight: 100;
         font-size: 24px;
     }

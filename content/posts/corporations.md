@@ -2,6 +2,7 @@
 title= "I'm Tired Of Corporations"
 date= 2023-06-11
 draft= false
+description = "I am so damn tired of corporations in every sense"
 +++
 
 mirrored from [mastodon](https://cutie.city/@ivy/110523929241532214)

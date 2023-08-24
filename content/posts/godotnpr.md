@@ -2,6 +2,7 @@
 title= "A little dive into NPR shading in Godot"
 date= 2023-07-25
 draft= false
+description = "playing, around with the early Godot 4 releases I tried my hand at NPR shading"
 +++
 
 When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot

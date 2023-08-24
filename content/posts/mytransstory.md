@@ -2,6 +2,7 @@
 title= "My 'Trans Story'"
 date= 2023-06-23
 draft= false
+description = "why do other trans people have such cool life stories?"
 +++
 
 mirrored from [mastodon](https://cutie.city/@ivy/110591582134325352)
