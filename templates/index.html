@@ -4,5 +4,9 @@
 <h1 class="title">
   This is my blog made with Zola.
 </h1>
+{# <p>{{ section.title }}</p> #}
+<article class="index">
+  {{ section.content | safe }}
+</article>
 <p>Click <a href="{{ get_url(path='@/posts/_index.md') }}">here</a> to see my posts.</p>
 {% endblock content %}
