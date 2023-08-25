@@ -71,32 +71,12 @@ html {
     }
 }
 
-.post {
+@mixin markdown {
     font: 100% $font-stack;
 
     font-size: 1rem;
-    margin-right: 4%;
-    margin-left: 4%;
     // width: 88%;
     // margin: auto;
-
-    max-width: 900px;
-    
-    // @media screen and (max-width: 1200px) {
-    //     max-width: 100%;
-    //     margin-right: 6%;
-    //     margin-left: 6%;
-    // }
-
-    @media screen and (max-width: 1000px) {
-        margin-right: 3%;
-        margin-left: 3%;
-    }
-
-    @media screen and (max-width: 700px) {
-        margin-right: 2%;
-        margin-left: 2%;
-    }
 
     tr {
         page-break-inside: avoid;
@@ -273,6 +253,54 @@ html {
     }
 }
 
+.post {
+    @include markdown;
+    max-width: 900px;
+    
+    // @media screen and (max-width: 1200px) {
+    //     max-width: 100%;
+    //     margin-right: 6%;
+    //     margin-left: 6%;
+    // }
+
+    margin-right: 4%;
+    margin-left: 4%;
+
+    @media screen and (max-width: 1000px) {
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+
+    @media screen and (max-width: 700px) {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+}
+
+.indexArticle {
+    @include markdown;
+    max-width: 900px;
+    
+    // @media screen and (max-width: 1200px) {
+    //     max-width: 100%;
+    //     margin-right: 6%;
+    //     margin-left: 6%;
+    // }
+
+    margin-right: 4%;
+    margin-left: 4%;
+
+    @media screen and (max-width: 1000px) {
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+
+    @media screen and (max-width: 700px) {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+}
+
 body {
     margin: 0%;
 }
@@ -281,7 +309,7 @@ footer {
     background-color: black;
     font-size: 1.2rem;
     padding: 1rem;
-    padding-left: 2rem;
+    padding-left: 1rem;
     // position: fixed;
     // left: 0;
     // bottom: 0;
