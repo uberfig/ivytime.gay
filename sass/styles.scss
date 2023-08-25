@@ -307,9 +307,12 @@ body {
 
 footer {
     background-color: black;
-    font-size: 1.2rem;
+
+    font: 200% $font-stack2;
+    font-size: 1rem;
     padding: 1rem;
     padding-left: 1rem;
+    
     // position: fixed;
     // left: 0;
     // bottom: 0;
