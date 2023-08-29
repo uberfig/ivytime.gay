@@ -26,9 +26,9 @@
 <p>When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <p>as it currently stands I was able to get similar behavior but I didn't quite get the same effect for shadows</p>
-<p><img src="/img/finalResult.png" alt="final result" title="test" /></p>
+<p><img src="/img/finalResult.png" alt="final result" title="screenshot of the final result of the shader" /></p>
 <p>the following shader is handles the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense</p>
-<p><img src="/img/OverlapArm.png" alt="arm overlap" title="test" /></p>
+<p><img src="/img/OverlapArm.png" alt="arm overlap" title="screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings" /></p>
 <h2 id="sobel-filtering">sobel filtering</h2>
 <p>for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it</p>
 <pre data-lang="glsl" style="background-color:#282a36;color:#f8f8f2;" class="language-glsl "><code class="language-glsl" data-lang="glsl"><span>shader_type spatial;
@@ -176,9 +176,9 @@
 <p>for the noise texture, I would recommend a new noisetexture2d  with fastnoiselite creating perlin noise with a frequency around 0.049</p>
 <p>whatever you wind up doing, I would recommend using soft and gradual noise to give the lines a more gradual waves in the final output</p>
 <h2 id="solid-color-shader">solid color shader</h2>
-<p>when working with curved geometry, the sobel filter will overreact and draw over it more than nessary. we can eliminate this by setting the solid norm property which will set the normal map to a solid color. this may make your lighting act a bit strange, but it shouldn't be too noticeable. Once godot gets support for a stencil buffer, this could be solved in a better way, but if anyone has an idea for a cleaner workaround, feel free to open an issue on my blog's github <a href="https://github.com/uberfig/ivytime.gay/issues">here</a></p>
+<p>when working with curved geometry, the sobel filter will overreact and draw over it more than nessary. we can eliminate this by setting the solid norm property which will set the normal map to a solid color. this may make your lighting act a bit strange, but it shouldn't be too noticeable. Once godot gets support for a stencil buffer, this could be solved in a better way, but if anyone has an idea for a cleaner workaround, feel free to open an issue on my blog's github repo <a href="https://github.com/uberfig/ivytime.gay/issues">here</a></p>
 <p>pictured is solid norm on the left and without it on the right
-<img src="/img/comparison.png" alt="comparison" title="compare" /></p>
+<img src="/img/comparison.png" alt="comparison" title="the solid norm has lines as what would be expected and the example without it has a large amount of line artifacts because of variations in proper smooth shading" /></p>
 <pre data-lang="glsl" style="background-color:#282a36;color:#f8f8f2;" class="language-glsl "><code class="language-glsl" data-lang="glsl"><span>shader_type spatial;
 </span><span>render_mode diffuse_burley;
 </span><span>
