@@ -11,11 +11,11 @@ When I was playing around with the early Godot 4 releases I stumbled upon a grea
 
 as it currently stands I was able to get similar behavior but I didn't quite get the same effect for shadows
 
-![final result](/img/finalResult.png "test")
+![final result](/img/finalResult.png "screenshot of the final result of the shader")
 
 the following shader is handles the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense
 
-![arm overlap](/img/OverlapArm.png "test")
+![arm overlap](/img/OverlapArm.png "screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings")
 
 ## sobel filtering
 
@@ -170,10 +170,10 @@ whatever you wind up doing, I would recommend using soft and gradual noise to gi
 
 ## solid color shader
 
-when working with curved geometry, the sobel filter will overreact and draw over it more than nessary. we can eliminate this by setting the solid norm property which will set the normal map to a solid color. this may make your lighting act a bit strange, but it shouldn't be too noticeable. Once godot gets support for a stencil buffer, this could be solved in a better way, but if anyone has an idea for a cleaner workaround, feel free to open an issue on my blog's github [here](https://github.com/uberfig/ivytime.gay/issues)
+when working with curved geometry, the sobel filter will overreact and draw over it more than nessary. we can eliminate this by setting the solid norm property which will set the normal map to a solid color. this may make your lighting act a bit strange, but it shouldn't be too noticeable. Once godot gets support for a stencil buffer, this could be solved in a better way, but if anyone has an idea for a cleaner workaround, feel free to open an issue on my blog's github repo [here](https://github.com/uberfig/ivytime.gay/issues)
 
 pictured is solid norm on the left and without it on the right
-![comparison](/img/comparison.png "compare")
+![comparison](/img/comparison.png "the solid norm has lines as what would be expected and the example without it has a large amount of line artifacts because of variations in proper smooth shading")
 
 ```glsl
 shader_type spatial;
