@@ -13,5 +13,4 @@ my handles:
 - [github: uberfig](https://github.com/uberfig)
 - [matrix @figroot:matrix.org](https://matrix.to/#/@figroot:matrix.org)
 
-I'm very active on mastodon and you can feel free to get in touch with me there. I typically have dms from people I don't follow off, but you would like to get in touch, feel free to unlisted @ me and I'll probably see it
-
+I'm very active on mastodon and you can feel free to get in touch with me there. I typically have dms from people I don't follow off, but if you would like to get in touch, feel free to unlisted @ me and I'll probably see it
