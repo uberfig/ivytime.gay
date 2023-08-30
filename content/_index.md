@@ -9,7 +9,7 @@ hey everyone, I'm ivy and I'm on various platforms on the internet
 pronouns: she/they/it
 
 my handles:
-- [mastodon: ivy@cutie.city](https://cutie.city/@ivy)
+- [yastodon: ivy@cutie.city](https://cutie.city/@ivy)
 - [github: uberfig](https://github.com/uberfig)
 - [matrix @figroot:matrix.org](https://matrix.to/#/@figroot:matrix.org)
 - <a rel="me" href="https://en.pronouns.page/@uberfig">pronouns.page</a>
