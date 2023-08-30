@@ -24,7 +24,17 @@
 <p class="subtitle"><strong>2023-07-25</strong></p>
 
 <p>When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+<div class="youtube">
+    <!-- <div class="wrapper"> -->
+    <iframe
+        src="https://www.youtube.com/embed/jlKNOirh66E"
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen>
+    </iframe>
+    <!-- </div> -->
+</div>
 <p>as it currently stands I was able to get similar behavior but I didn't quite get the same effect for shadows</p>
 <p><img src="/img/finalResult.png" alt="final result" title="screenshot of the final result of the shader" /></p>
 <p>the following shader is handles the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense</p>
