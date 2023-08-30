@@ -8,6 +8,7 @@ description = "This letter urges the CBC to join the 'federated internet' by cre
 Between massive wildfires and a war in Ukraine, Canadians need rapid and reliable access to the news now more than ever. However, in an attempt to prevent sharing revenue with news outlets, Facebook's parent company has banned news content from all of its platforms. 
 
 This letter urges the CBC to join the "federated internet" by creating a mastodon or other federated platform instance [similar to the BBC](https://www.bbc.com/rd/blog/2023-07-mastodon-distributed-decentralised-fediverse-activitypub)
+
 ## in your feed, guaranteed 
 
 

@@ -39,7 +39,7 @@ html {
     margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 450px;
 
     @media screen and (max-width: 600px) {
         margin-top: 0.25rem;
@@ -60,13 +60,30 @@ html {
 
         text-decoration: none;
         color: $fontColor;
+
         text-align: center;
 
+        //expand to size of div
+        height: 100%;
+        width: 100%;
+        display: block;
+
         h1 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
         }
         p {
             font-size: 1rem;
+        }
+        hr {
+            border-top: 2px solid;
+            color: $fontColor;
+        }
+    }
+
+    a:hover {
+        color: $accentColor;
+        hr {
+            color: $accentColor;
         }
     }
 }
