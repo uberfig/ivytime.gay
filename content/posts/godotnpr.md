@@ -16,7 +16,7 @@ as it currently stands I was able to get similar behavior but I didn't quite get
 
 ![final result](/img/finalResult.png "screenshot of the final result of the shader")
 
-the following shader is handles the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense
+the following shader is handling the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense
 
 ![arm overlap](/img/OverlapArm.png "screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings")
 
