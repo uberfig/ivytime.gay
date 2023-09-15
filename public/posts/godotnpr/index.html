@@ -4,19 +4,27 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8">
-  <title>Ivy&#x27;s Blog</title>
+  <title>ivytime</title>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <nav>
-  <a class="logo" href="https://ivytime.gay">Ivy&#x27;s Blog</a>
+  <a class="logo" href="https://ivytime.gay">ivytime</a>
 </nav>
 
 <body>
   <section class="section">
     <div class="container">
       
+
+<meta property="og:url"         content="https:&#x2F;&#x2F;ivytime.gay&#x2F;posts&#x2F;godotnpr&#x2F;" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="A little dive into NPR shading in Godot" />
+<meta property="og:description" content="I tried my hand at NPR shading with the early Godot 4 releases" />
+
+
+
 <article class="post">
 <h1 class="title">
   A little dive into NPR shading in Godot
@@ -37,7 +45,7 @@
 </div>
 <p>as it currently stands I was able to get similar behavior but I didn't quite get the same effect for shadows</p>
 <p><img src="/img/finalResult.png" alt="final result" title="screenshot of the final result of the shader" /></p>
-<p>the following shader is handles the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense</p>
+<p>the following shader is handling the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense</p>
 <p><img src="/img/OverlapArm.png" alt="arm overlap" title="screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings" /></p>
 <h2 id="sobel-filtering">sobel filtering</h2>
 <p>for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it</p>
@@ -287,7 +295,7 @@
   <div class="footflex">
     <a rel="me" href="https://cutie.city/@ivy"><img src="/cutiecity.svg" alt="mastodon link"
         style="width:32px;height:32px;"></a>
-    <a>Site © Ivy&#x27;s Blog 2023</a>
+    <a>Site © ivytime 2023</a>
   </div>
 </footer>
 

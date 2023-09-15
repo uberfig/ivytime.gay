@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+<meta property="og:url"         content="{{ current_url }}" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="{{ page.title }}" />
+<meta property="og:description" content="{{ page.description }}" />
+{% if page.preview_img %}
+  <meta property="og:image"       content="{{ page.preview_img }}" />
+{% endif %}
+
+
 <article class="post">
 <h1 class="title">
   {{ page.title }}
