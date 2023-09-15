@@ -269,7 +269,7 @@ html {
 
 
         font: 100% $font-stack;
-        font-size: 1rem;
+        font-size: 1.6rem;
 
         color: $mutedAccent;
         background-color: #e6e6e6;
@@ -336,6 +336,49 @@ html {
 
 body {
     margin: 0%;
+}
+
+.container {
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 3%;
+        @media screen and (max-width: 700px) {
+            margin-right: 2%;
+            margin-left: 2%;
+            p {
+                margin: auto;
+            }
+        }
+    }
+
+    // display: flex;
+    // width: 100%;
+    @media screen and (min-width: 1300px) {
+
+        display: flex;
+        article {
+            // float: left;
+            width: 66%;
+            // justify-content: flex-end;
+        }
+        aside {
+            // flex-flow: row-reverse;
+            // justify-content: flex-end;
+            display: block;
+            margin-left: auto;
+            
+            // float: right;
+            width: 40%;
+            max-width: 400px;
+            // margin-left: auto;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+        }
+        
+    }
 }
 
 footer {
