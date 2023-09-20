@@ -18,3 +18,5 @@ this works
 | test | hello |
 | ---- | ----- |
 | well | ok |
+| well | ok |
+| well | ok |
