@@ -6,6 +6,8 @@ description = "I tried my hand at NPR shading with the early Godot 4 releases"
 preview_img = "/img/finalResult.png"
 +++
 
+<meta property="og:image"       content="https://ivytime.gay/img/finalResult.png" />
+
 When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot
 
 <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->

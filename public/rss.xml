@@ -14,7 +14,8 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/godotnpr/</link>
           <guid>https://ivytime.gay/posts/godotnpr/</guid>
-          <description>&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
+          <description>&lt;meta property=&quot;og:image&quot;       content=&quot;https:&#x2F;&#x2F;ivytime.gay&#x2F;img&#x2F;finalResult.png&quot; &#x2F;&gt;
+&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
 &lt;!-- &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;jlKNOirh66E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt; --&gt;
 &lt;div class=&quot;youtube&quot;&gt;
     &lt;!-- &lt;div class=&quot;wrapper&quot;&gt; --&gt;
