@@ -3,7 +3,7 @@ title= "A little dive into NPR shading in Godot"
 date= 2023-07-25
 draft= false
 description = "I tried my hand at NPR shading with the early Godot 4 releases"
-preview_img = "{{ get_url(path='/img/finalResult.png') }}"
+preview_img = "/img/finalResult.png"
 +++
 
 When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot
