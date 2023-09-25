@@ -47,6 +47,4 @@ For these reasons I feel a Fediverse that federates with Facebook would be one t
 
 I feel that those who are strangely eager to federate with Facebook's new platform are trying to weigh the value of growth this platform could provide against how it could negatively change the atmosphere on the Fedi. I personally feel that maintaining the Fediverse's values is much more important than blind growth.
 
-I would recommend that instances defederate threads.net now to protect our community and keep it safe and welcoming for all of us
-
-I would personally suggest the approach of defederate threads.net now and leaving it defederated until we know for certain that it will be properly moderated, comply with EU privacy law, and won't damage the atmosphere we've built as a community. I don't know if Facebook's platform will ever reach such a state, however we have gotten along perfectly well without them, why do we need them now?
+I would personally recommend defederating threads.net now and leaving it defederated until we know for certain that it will be properly moderated, comply with EU privacy law, and won't damage the atmosphere we've built as a community. I don't know if Facebook's platform will ever reach such a state, however we have gotten along perfectly well without them, why do we need them now?
