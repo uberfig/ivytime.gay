@@ -22,6 +22,7 @@ the following shader is handling the sobel filtering for both the depth and norm
 
 ![arm overlap](/img/OverlapArm.png "screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings")
 
+<!-- {{ permalink(id="sobel-filtering", text="sobel filtering") }} -->
 ## sobel filtering
 
 for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it
@@ -174,6 +175,7 @@ for the noise texture, I would recommend a new noisetexture2d  with fastnoiselit
 whatever you wind up doing, I would recommend using soft and gradual noise to give the lines a more gradual waves in the final output
 
 ## solid color shader
+
 
 when working with curved geometry, the sobel filter will overreact and draw over it more than nessary. we can eliminate this by setting the solid norm property which will set the normal map to a solid color. this may make your lighting act a bit strange, but it shouldn't be too noticeable. Once godot gets support for a stencil buffer, this could be solved in a better way, but if anyone has an idea for a cleaner workaround, feel free to open an issue on my blog's github repo [here](https://github.com/uberfig/ivytime.gay/issues)
 

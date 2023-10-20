@@ -161,12 +161,9 @@ html {
     //     // tbody,
     //     // thead {
 
-
     //         // tr,
     //         // td,
     //         // th {
-
-
 
     //         // }
     //     // }
@@ -231,7 +228,6 @@ html {
     }
 
     blockquote {
-
         margin-left: 2vw;
 
         * {
@@ -240,7 +236,6 @@ html {
 
             border-left: 4px solid $accentColor;
             padding: 1rem;
-
         }
     }
 
@@ -269,6 +264,26 @@ html {
         font-weight: 600;
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+
+
+    .permalink {
+        color: $fontColor;
+        text-decoration: none;
+        color: $darkAccent;
+
+        h2::before {
+            display: inline-block;
+            content: "#";
+            margin-left: -1em;
+            width: 0.7em;
+        }
+        &:hover {
+            color: $accentColor;
+            h2::before {
+                text-decoration: underline;
+            }
+        }
     }
 
     ul {
@@ -311,14 +326,12 @@ html {
         border-width: 2px;
         border-style: solid;
 
-
         font: 100% $font-stack;
         font-size: 1.6rem;
 
         color: $mutedAccent;
         background-color: #e6e6e6;
         opacity: 0.9;
-
 
         &:hover {
             color: $accentColor;
@@ -327,11 +340,9 @@ html {
             // color: #ddd
         }
     }
-
 }
 
 .rssbutt {
-
     svg {
         padding-left: 0.6rem;
         height: 2rem;
@@ -357,6 +368,29 @@ html {
 
     margin-right: 4%;
     margin-left: 4%;
+
+    h2 {
+        color: $darkAccent;
+        a {
+            color: $darkAccent;
+            text-decoration: none;
+            
+        }
+
+        a::before {
+            display: inline;
+            content: "#";
+            margin-left: -1em;
+            margin-right: 0em;
+            width: 1em;
+        }
+        &:hover {
+            color: $accentColor;
+            // a::before {
+            //     text-decoration: underline;
+            // }
+        }
+    }
 
     @media screen and (max-width: 1000px) {
         margin-right: 3%;
@@ -416,7 +450,6 @@ body {
     // display: flex;
     // width: 100%;
     @media screen and (min-width: 1300px) {
-
         display: flex;
 
         article {
@@ -441,7 +474,6 @@ body {
                 margin: 0;
             }
         }
-
     }
 }
 

@@ -26,6 +26,11 @@ feed_filename = "rss.xml"
 # content for `default_language`.
 build_search_index = false
 
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
