@@ -511,6 +511,7 @@ nav {
     font-size: 1.5rem;
 
     color: white;
+    text-decoration: none;
     // font-size: 1.2rem;
 
     background-color: black;
@@ -524,12 +525,6 @@ nav {
     width: 100%;
     box-sizing: border-box;
 
-    .text {
-        // font: $font-stack2;
-        color: white;
-        text-decoration: none;
-    }
-
     .navflex {
         padding-right: 2rem;
         color: white;
@@ -542,6 +537,11 @@ nav {
             color: white;
             padding-right: 0.7rem;
             margin-top: 0.1rem;
+        }
+        .text {
+            // font: $font-stack2;
+            color: white;
+            text-decoration: none;
         }
     }
 }
