@@ -515,7 +515,7 @@ nav {
 
     background-color: black;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     padding-left: 1rem;
     padding-right: 2rem;
     // position: fixed;
@@ -524,9 +524,23 @@ nav {
     width: 100%;
     box-sizing: border-box;
 
-    .logo {
+    .text {
         // font: $font-stack2;
         color: white;
         text-decoration: none;
+    }
+
+    .navflex {
+        padding-right: 2rem;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .logo {
+            color: white;
+            padding-right: 0.7rem;
+        }
     }
 }
