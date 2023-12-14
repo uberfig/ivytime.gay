@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
-
+{% block head %} 
 <meta property="og:url"         content="{{ current_url }}" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="{{ page.title }}" />
@@ -12,10 +11,9 @@
   <meta property="og:image"       content="{{ get_url(path=page.preview_img) }}" />
   {# <meta property="og:image"       content="{{ page.preview_img }}" /> #}
 {% endif %}
-{# <meta property="og:image"       content="{{ get_url(path='/img/finalResult.png') }}" /> #}
-{# <meta property="og:image"       content="{{ get_url(path=page.preview_img) }}" /> #}
+{% endblock %}
 
-
+{% block content %}
 <article class="post">
 <h1 class="title">
   {{ page.title }}
