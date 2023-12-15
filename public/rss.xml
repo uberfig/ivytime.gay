@@ -7,16 +7,22 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://ivytime.gay/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Tue, 25 Jul 2023 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>me</title>
+          <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/me/me/</link>
+          <guid>https://ivytime.gay/art/me/me/</guid>
+          <description></description>
+      </item>
       <item>
           <title>A little dive into NPR shading in Godot</title>
           <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/godotnpr/</link>
           <guid>https://ivytime.gay/posts/godotnpr/</guid>
-          <description>&lt;meta property=&quot;og:image&quot;       content=&quot;https:&#x2F;&#x2F;ivytime.gay&#x2F;img&#x2F;finalResult.png&quot; &#x2F;&gt;
-&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
-&lt;!-- &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube-nocookie.com&#x2F;embed&#x2F;jlKNOirh66E&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt; --&gt;
+          <description>&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
 &lt;div class=&quot;youtube&quot;&gt;
     &lt;!-- &lt;div class=&quot;wrapper&quot;&gt; --&gt;
     &lt;iframe
@@ -31,11 +37,6 @@
 &lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;finalResult.png&quot; alt=&quot;final result&quot; title=&quot;screenshot of the final result of the shader&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;the following shader is handling the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;OverlapArm.png&quot; alt=&quot;arm overlap&quot; title=&quot;screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;!-- &lt;a href=&quot;#sobel-filtering&quot; class=&quot;permalink&quot;&gt;
-&lt;h2 id=&quot;sobel-filtering&quot;&gt;
-    sobel filtering
-&lt;&#x2F;h2&gt;
-&lt;&#x2F;a&gt; --&gt;
 &lt;h2 id=&quot;sobel-filtering&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#sobel-filtering&quot; aria-label=&quot;Anchor link for: sobel-filtering&quot;&gt;sobel filtering&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;glsl&quot; style=&quot;background-color:#282a36;color:#f8f8f2;&quot; class=&quot;language-glsl &quot;&gt;&lt;code class=&quot;language-glsl&quot; data-lang=&quot;glsl&quot;&gt;&lt;span&gt;shader_type spatial;

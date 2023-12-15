@@ -15,6 +15,10 @@
 
 
 
+  
+  <meta property="og:image"       content="https://ivytime.gay/img/finalResult.png" />
+  
+
 
 </head>
 
@@ -36,14 +40,14 @@
     <div class="container">
       
 <article class="post">
+
+
 <h1 class="title">
   A little dive into NPR shading in Godot
 </h1>
 <p class="subtitle"><strong>2023-07-25</strong></p>
 
-<meta property="og:image"       content="https://ivytime.gay/img/finalResult.png" />
 <p>When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot</p>
-<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jlKNOirh66E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
 <div class="youtube">
     <!-- <div class="wrapper"> -->
     <iframe
@@ -58,11 +62,6 @@
 <p><img src="/img/finalResult.png" alt="final result" title="screenshot of the final result of the shader" /></p>
 <p>the following shader is handling the sobel filtering for both the depth and normal buffers. I took this combined approach to allow for better drawing of lines and the ability for a material to draw lines over itself when it makes sense</p>
 <p><img src="/img/OverlapArm.png" alt="arm overlap" title="screenshot highlighting that the depth pass will allow smooth materials to draw lines when overlapping themself like most 2d drawings" /></p>
-<!-- <a href="#sobel-filtering" class="permalink">
-<h2 id="sobel-filtering">
-    sobel filtering
-</h2>
-</a> -->
 <h2 id="sobel-filtering"><a class="zola-anchor" href="#sobel-filtering" aria-label="Anchor link for: sobel-filtering">sobel filtering</a></h2>
 <p>for the following to work, it should be applied to a meshinstance with a new quadmesh and the geometry Extra Cull Distance property should be set to max. The shader will handle snapping the mesh to the camera and filtering the buffer behind it</p>
 <pre data-lang="glsl" style="background-color:#282a36;color:#f8f8f2;" class="language-glsl "><code class="language-glsl" data-lang="glsl"><span>shader_type spatial;

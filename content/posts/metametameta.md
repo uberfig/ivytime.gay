@@ -3,6 +3,8 @@ title= "Meta Meta Meta"
 date= 2023-07-05
 draft= false
 description = "The Fedi's biggest feature and Meta's biggest threat lies in moderation"
+[extra]
+has_preview = false
 +++
 
 The Fedi's biggest feature and Meta's biggest threat lies in moderation

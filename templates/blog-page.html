@@ -7,14 +7,17 @@
 <meta property="og:description" content="{{ page.description }}" />
 
 
-{% if page.preview_img %}
-  <meta property="og:image"       content="{{ get_url(path=page.preview_img) }}" />
-  {# <meta property="og:image"       content="{{ page.preview_img }}" /> #}
+{% if page.extra.has_preview == true %}
+  {# <meta property="og:image"       content="test" />  #}
+  <meta property="og:image"       content="{{ get_url(path=page.extra.preview_img) }}" />
+  {# {{ get_url(path=page.preview_img) }} #}
 {% endif %}
 {% endblock %}
 
 {% block content %}
 <article class="post">
+{# <p>{{ __tera_context }}</p> #}
+
 <h1 class="title">
   {{ page.title }}
 </h1>

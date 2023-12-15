@@ -4,8 +4,10 @@ sort_by = "date"
 template = "blog.html"
 page_template = "blog-page.html"
 description = ""
-preview_img = ""
 insert_anchor_links = "heading"
+[extra]
+preview_img = ""
+has_preview = false
 +++
 
 # welcome to my blog
