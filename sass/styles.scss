@@ -109,10 +109,35 @@ html {
 
     .youtube {
         aspect-ratio: 16/9;
+        border: none;
+        
 
         iframe {
+            border: none;
             width: 100%;
             height: 100%;
+            
+        }
+    }
+
+    .game {
+        aspect-ratio: 16/9;
+        border: none;
+        overflow: hidden;
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            // -ms-zoom: 0.75;
+            // -moz-transform: scale(0.75);
+            // -moz-transform-origin: 0 0;
+            // -o-transform: scale(0.75);
+            // -o-transform-origin: 0 0;
+            // -webkit-transform: scale(0.75);
+            // -webkit-transform-origin: 0 0;
         }
     }
 
@@ -134,6 +159,7 @@ html {
         &:nth-child(odd) {
             background-color: $backgroundDeep;
         }
+
         &:hover {
             background-color: $accentColor;
         }
@@ -278,8 +304,10 @@ html {
             margin-left: -1em;
             width: 0.7em;
         }
+
         &:hover {
             color: $accentColor;
+
             h2::before {
                 text-decoration: underline;
             }
@@ -371,10 +399,11 @@ html {
 
     h2 {
         color: $darkAccent;
+
         a {
             color: $darkAccent;
             text-decoration: none;
-            
+
         }
 
         a::before {
@@ -384,6 +413,7 @@ html {
             margin-right: 0em;
             width: 1em;
         }
+
         &:hover {
             color: $accentColor;
         }
@@ -392,6 +422,7 @@ html {
     @media screen and (max-width: 1000px) {
         margin-right: 3%;
         margin-left: 3%;
+
         h2 a::before {
             margin-left: 0px;
         }
@@ -538,6 +569,7 @@ nav {
             padding-right: 0.7rem;
             margin-top: 0.1rem;
         }
+
         .text {
             // font: $font-stack2;
             color: white;

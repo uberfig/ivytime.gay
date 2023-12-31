@@ -1,0 +1,3 @@
+[submodule "static/assets/simplevarletout"]
+	path = static/assets/simplevarletout
+	url = https://github.com/uberfig/simplevarletout.git
