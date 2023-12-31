@@ -1,6 +1,6 @@
 +++
 title= "Custom Physics in Bevy"
-date= 2023-07-25
+date= 2023-12-31
 draft= false
 description = "I had a little fun implimenting simple physics in bevy"
 [extra]

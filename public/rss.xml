@@ -7,18 +7,10 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://ivytime.gay/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 14 Dec 2023 00:00:00 +0000</lastBuildDate>
-      <item>
-          <title>me</title>
-          <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
-          <link>https://ivytime.gay/art/me/me/</link>
-          <guid>https://ivytime.gay/art/me/me/</guid>
-          <description xml:base="https://ivytime.gay/art/me/me/"></description>
-      </item>
+      <lastBuildDate>Sun, 31 Dec 2023 00:00:00 +0000</lastBuildDate>
       <item>
           <title>Custom Physics in Bevy</title>
-          <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+          <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/bevyphysics/</link>
           <guid>https://ivytime.gay/posts/bevyphysics/</guid>
@@ -39,6 +31,14 @@
     &lt;&#x2F;iframe&gt;
     &lt;!-- &lt;&#x2F;div&gt; --&gt;
 &lt;&#x2F;div&gt;</description>
+      </item>
+      <item>
+          <title>me</title>
+          <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/me/me/</link>
+          <guid>https://ivytime.gay/art/me/me/</guid>
+          <description xml:base="https://ivytime.gay/art/me/me/"></description>
       </item>
       <item>
           <title>A little dive into NPR shading in Godot</title>
