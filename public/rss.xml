@@ -23,7 +23,7 @@
           <link>https://ivytime.gay/posts/bevyphysics/</link>
           <guid>https://ivytime.gay/posts/bevyphysics/</guid>
           <description xml:base="https://ivytime.gay/posts/bevyphysics/">&lt;div class=&quot;game&quot; style=&quot;overflow:hidden;&quot;&gt;
-    &lt;iframe id=&quot;mygame-iframe&quot; src=&quot;&#x2F;assets&#x2F;simplevarletout&#x2F;index.html&quot; width=&quot;640&quot; height=&quot;480&quot;
+    &lt;iframe id=&quot;mygame-iframe&quot; src=&quot;&#x2F;assets&#x2F;varlet&#x2F;index.html&quot; width=&quot;640&quot; height=&quot;480&quot;
         style=&quot;overflow:hidden;&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
 &lt;p&gt;I picked up bevy and I was having a lot of fun with it so I figured I would impliment a basic physics solver in it for fun &lt;&#x2F;p&gt;
