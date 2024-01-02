@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<meta property="og:url"         content="{{ current_url }}" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="{{ section.title }}" />
+<meta property="og:description" content="{{ section.description }}" />
+<meta property="twitter:card"   content="summary_large_image" />
+<meta property="twitter:title"  content="{{ section.title }}" />
+{% endblock %}
+
+{% block content %}
+<article class="post">
+{# <p>{{ __tera_context }}</p> #}
+
+<h1 class="title">
+  {{ section.title }}
+</h1>
+
+{{ section.content | safe }}
+</article>
+{% endblock content %}

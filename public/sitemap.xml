@@ -7,8 +7,15 @@
         <loc>https://ivytime.gay/art/</loc>
     </url>
     <url>
-        <loc>https://ivytime.gay/art/me/me/</loc>
+        <loc>https://ivytime.gay/art/me/</loc>
         <lastmod>2023-12-14</lastmod>
+    </url>
+    <url>
+        <loc>https://ivytime.gay/goobers/</loc>
+    </url>
+    <url>
+        <loc>https://ivytime.gay/goobers/test/</loc>
+        <lastmod>2023-07-04</lastmod>
     </url>
     <url>
         <loc>https://ivytime.gay/posts/</loc>
