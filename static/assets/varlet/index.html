@@ -1,7 +1,20 @@
 <!doctype html>
 <html lang="en">
+<style>
+  body {
+    margin: 0px;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
 
-<body style="margin: 0px;">
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style>
+
+<body>
   <script type="module">
     import init from './varlet.js'
 
@@ -11,6 +24,10 @@
       }
     });
   </script>
+  <div>
+    <canvas id="game-canvas"></canvas>
+  </div>
+
 </body>
 
 </html>
