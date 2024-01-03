@@ -5,6 +5,7 @@ template = "blog.html"
 page_template = "blog-page.html"
 description = ""
 insert_anchor_links = "heading"
+generate_feed = true
 [extra]
 preview_img = ""
 has_preview = false

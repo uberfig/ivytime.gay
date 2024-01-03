@@ -340,12 +340,13 @@ html {
         border-radius: 3px;
     }
 
-    .section {
+    .section-link {
         text-decoration: none;
         border: none;
         border-radius: 6px;
         border-width: 2px;
         border-style: solid;
+        padding: 6px;
 
         font: 100% $font-stack;
         font-size: 1.6rem;
@@ -354,6 +355,8 @@ html {
         background-color: #e6e6e6;
         opacity: 0.9;
 
+        font-size: 1.5rem;
+        font-weight: 600;
         &:hover {
             color: $accentColor;
             opacity: 1;
@@ -378,6 +381,10 @@ html {
         li::before {
             content: none;
         }
+    }
+
+    br {
+        margin-top: 0.25em;
     }
 }
 

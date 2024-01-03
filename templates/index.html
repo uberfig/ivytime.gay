@@ -22,11 +22,10 @@
     </h1>
 
     {{ section.content | safe }}
-
-    <h2>
-      {# Recent Posts #}
-      <a href="{{ get_url(path='@/posts/_index.md') }}" class="section">Ivy's Blog</a>
-    </h2>
+    
+    <p>
+    <a href="{{ get_url(path='@/posts/_index.md') }}" class="section-link">Ivy's Blog</a>
+    </p>
 
     <br>
     <hr>
