@@ -45,4 +45,5 @@ highlight_theme = "dracula"
 [extra]
 # Put all your custom variables here
 site_name = "ivytime"
-year = "2023"
+start_year = "2023"
+curr_year = "24"
