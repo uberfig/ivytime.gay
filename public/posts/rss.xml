@@ -7,7 +7,20 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://ivytime.gay/posts/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Sun, 31 Dec 2023 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>creating a messaging client for fun and profit</title>
+          <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/posts/another-messaging-client-in-rust/</link>
+          <guid>https://ivytime.gay/posts/another-messaging-client-in-rust/</guid>
+          <description>&lt;p&gt;I&#x27;ve recently taken to hanging out with a group of silly goobers and we&#x27;ve come to rely on discord for planning, sharing info, and just hanging out. Over time I&#x27;ve had some annoyances and we discussed switching to self hosting another platform like matrix but there wasn&#x27;t anything that fit our needs.&lt;&#x2F;p&gt;
+&lt;p&gt;Last month I was poking around with the rocket framework for rust and started putting a chat application together. I&#x27;ve kept at it for the past while and its starting to take shape. This project is focusing on feature completeness first and a stabilised protocol second, this will allow me to peruse the stuff I felt was missing from matrix without getting bogged down. I do plan on implementing xmpp down the road for federation, however I won&#x27;t be doing that until after the core features are complete and stable. You can find the repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;uberfig&#x2F;gaterdile&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The project currently only supports firefox and there&#x27;s a roadmap on the repo&#x27;s readme that&#x27;s roughly the order I plan to tackle things. The list is very subject to change and I don&#x27;t plan on having the 0.1 release until after hyper&#x27;s vulnerabilities get fixed&lt;&#x2F;p&gt;
+&lt;p&gt;:3&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;gaterdile_first_look.png&quot; alt=&quot;final result&quot; title=&quot;screenshot of gaterdile as of now. it currently supports message replies, twimoji and multiline comments with many more features to come&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Custom Physics in Bevy</title>
           <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
