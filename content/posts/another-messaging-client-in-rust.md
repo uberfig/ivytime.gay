@@ -1,5 +1,5 @@
 +++
-title= "creating a messaging client for fun and profit"
+title= "creating an open source messaging client for fun and profit"
 date= 2024-02-15
 draft= false
 description = "I've started making a persistent messaging platform with rust"
