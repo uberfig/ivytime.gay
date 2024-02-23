@@ -528,6 +528,7 @@ body {
 }
 
 footer {
+    vertical-align: bottom;
     background-color: black;
 
     font: 200% $font-stack2;
@@ -542,6 +543,7 @@ footer {
     box-sizing: border-box;
 
     .footflex {
+        vertical-align: bottom;
         padding-right: 2rem;
         color: white;
         display: flex;
