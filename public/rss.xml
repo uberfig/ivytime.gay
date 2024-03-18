@@ -14,7 +14,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/another-messaging-client-in-rust/</link>
           <guid>https://ivytime.gay/posts/another-messaging-client-in-rust/</guid>
-          <description>&lt;p&gt;I&#x27;ve recently taken to hanging out with a group of silly goobers and we&#x27;ve come to rely on discord for planning, sharing info, and just hanging out. Over time I&#x27;ve had some annoyances and we discussed switching to self hosting another platform like matrix but there wasn&#x27;t anything that fit our needs.&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/another-messaging-client-in-rust/">&lt;p&gt;I&#x27;ve recently taken to hanging out with a group of silly goobers and we&#x27;ve come to rely on discord for planning, sharing info, and just hanging out. Over time I&#x27;ve had some annoyances and we discussed switching to self hosting another platform like matrix but there wasn&#x27;t anything that fit our needs.&lt;&#x2F;p&gt;
 &lt;p&gt;Last month I was poking around with the rocket framework for rust and started putting a chat application together. I&#x27;ve kept at it for the past while and its starting to take shape. This project is focusing on feature completeness first and a stabilised protocol second, this will allow me to peruse the stuff I felt was missing from matrix without getting bogged down. I do plan on implementing xmpp down the road for federation, however I won&#x27;t be doing that until after the core features are complete and stable. You can find the repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;uberfig&#x2F;gaterdile&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;The project currently only supports firefox and there&#x27;s a roadmap on the repo&#x27;s readme that&#x27;s roughly the order I plan to tackle things. The list is very subject to change and I don&#x27;t plan on having the 0.1 release until after hyper&#x27;s vulnerabilities get fixed&lt;&#x2F;p&gt;
 &lt;p&gt;:3&lt;&#x2F;p&gt;
@@ -27,7 +27,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/bevyphysics/</link>
           <guid>https://ivytime.gay/posts/bevyphysics/</guid>
-          <description>&lt;div class=&quot;game&quot; style=&quot;overflow:hidden;&quot;&gt;
+          <description xml:base="https://ivytime.gay/posts/bevyphysics/">&lt;div class=&quot;game&quot; style=&quot;overflow:hidden;&quot;&gt;
     &lt;iframe id=&quot;mygame-iframe&quot; src=&quot;&#x2F;assets&#x2F;varlet&#x2F;index.html&quot; width=&quot;640&quot; height=&quot;480&quot;
         style=&quot;overflow:hidden;&quot;&gt;&lt;&#x2F;iframe&gt;
 &lt;&#x2F;div&gt;
@@ -54,7 +54,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/art/me/</link>
           <guid>https://ivytime.gay/art/me/</guid>
-          <description>&lt;p&gt;&lt;img src=&quot;&#x2F;me&#x2F;me.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/art/me/">&lt;p&gt;&lt;img src=&quot;&#x2F;me&#x2F;me.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
@@ -63,7 +63,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/godotnpr/</link>
           <guid>https://ivytime.gay/posts/godotnpr/</guid>
-          <description>&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/godotnpr/">&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
 &lt;div class=&quot;youtube&quot;&gt;
     &lt;!-- &lt;div class=&quot;wrapper&quot;&gt; --&gt;
     &lt;iframe
@@ -323,7 +323,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/metametameta/</link>
           <guid>https://ivytime.gay/posts/metametameta/</guid>
-          <description>&lt;p&gt;The Fedi&#x27;s biggest feature and Meta&#x27;s biggest threat lies in moderation&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/metametameta/">&lt;p&gt;The Fedi&#x27;s biggest feature and Meta&#x27;s biggest threat lies in moderation&lt;&#x2F;p&gt;
 &lt;p&gt;Here is a little rundown of what&#x27;s going on for the uninitiated, you can skip over this if you&#x27;re already in the loop:&lt;&#x2F;p&gt;
 &lt;p&gt;There has been a lot of heated debate surrounding federation with Facebook&#x27;s latest platform Threads. Threads is a centralized platform made by Facebook with the intent of cloning twitter. The little information we have suggests that this platform will eventually support ActivityPub (the standard that allows all federated platforms to communicate) to some degree sometime down the road. A handful of admins from some of the largest instances were invited to talks with Facebook under an NDA where they received information about the new platform, leading to a level of concern, especially in regards to transparency, from smaller instances and users. &lt;&#x2F;p&gt;
 &lt;p&gt;There are effectively two major views surrounding Facebook&#x27;s new platform:&lt;&#x2F;p&gt;
@@ -356,7 +356,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/welcome/</link>
           <guid>https://ivytime.gay/posts/welcome/</guid>
-          <description>&lt;p&gt;With all the craziness of Facebook&#x27;s new platform and my tendency to post loooong posts from time to time, I thought it would be a good idea to put things here. I don’t really have a posting schedule or anything all that formal, I’ll just put things here when I think they’re important or if I want to archive it&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/welcome/">&lt;p&gt;With all the craziness of Facebook&#x27;s new platform and my tendency to post loooong posts from time to time, I thought it would be a good idea to put things here. I don’t really have a posting schedule or anything all that formal, I’ll just put things here when I think they’re important or if I want to archive it&lt;&#x2F;p&gt;
 &lt;p&gt;Thanks for checking out my blog and I hope you have a nice day 💜&lt;&#x2F;p&gt;
 &lt;p&gt;-Ivy🏳️‍⚧️&lt;&#x2F;p&gt;
 </description>
@@ -367,7 +367,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/mytransstory/</link>
           <guid>https://ivytime.gay/posts/mytransstory/</guid>
-          <description>&lt;p&gt;mirrored from &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110591582134325352&quot;&gt;mastodon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/mytransstory/">&lt;p&gt;mirrored from &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110591582134325352&quot;&gt;mastodon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;why do other trans people have such cool life stories?&lt;&#x2F;p&gt;
 &lt;p&gt;I didn&#x27;t try on my mom&#x27;s clothes &lt;&#x2F;p&gt;
 &lt;p&gt;I didn&#x27;t hang out with the girls at school &lt;&#x2F;p&gt;
@@ -393,7 +393,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/corporations/</link>
           <guid>https://ivytime.gay/posts/corporations/</guid>
-          <description>&lt;p&gt;mirrored from &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110523929241532214&quot;&gt;mastodon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/corporations/">&lt;p&gt;mirrored from &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110523929241532214&quot;&gt;mastodon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;I am so damn tired of corporations in every sense&lt;&#x2F;p&gt;
 &lt;p&gt;the snacks I buy keep getting smaller&lt;&#x2F;p&gt;
 &lt;p&gt;the flavors keep fading in prepared foods&lt;&#x2F;p&gt;
@@ -415,7 +415,7 @@
           <author>Unknown</author>
           <link>https://ivytime.gay/posts/relearn-writing/</link>
           <guid>https://ivytime.gay/posts/relearn-writing/</guid>
-          <description>&lt;p&gt;I wrote this post on a whim and I really liked it so I thought I would mirror it here. It&#x27;s also still on my mastodon profile &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110472695040363825&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+          <description xml:base="https://ivytime.gay/posts/relearn-writing/">&lt;p&gt;I wrote this post on a whim and I really liked it so I thought I would mirror it here. It&#x27;s also still on my mastodon profile &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110472695040363825&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;laying in bed working on writing a story, it would seem that I really do like writing after all. I&#x27;ve always enjoyed storytelling and reading, but I struggled with english class. through elementary and high school, english was the one subject I dreaded. I struggled with keeping my grades on par with the rest of my classes, and I struggled to simply complete the work. writing a formal essay with word counts, mla formatting, and hard time limits led me to become adverse to writing as a whole. I stopped reading for fun in high school, and the act of reading became stressful, a task that needed to be performed. now I&#x27;m in university, and with my classes, strategically chosen to have as little formal writing as possible, I&#x27;ve started to write in ways I never had before. I&#x27;ve just begun writing down the stories I&#x27;ve had kicking around in my mind for years. as I work, the writing feels like a medium for an art form rather than something mechanical. there are no length requirements or ways it must be formatted. there is no ticking clock that holds the balance of some arbitrary pass or failure. I can just create, and I think that&#x27;s something special&lt;&#x2F;p&gt;
 </description>
       </item>
