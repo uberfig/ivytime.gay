@@ -1,5 +1,5 @@
 +++
-title = "the little goober webring"
+title = "the lil' goober webring"
 description = "a webring for cool people on the indieweb"
 template = "generic.html"
 page_template = "blog-page.html"

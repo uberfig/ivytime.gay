@@ -429,6 +429,12 @@ section {
         li::before {
             content: none;
         }
+        @media screen and (max-width: 500px) {
+            display: block;
+            li {
+                display: block;
+            }
+        }
     }
 
     br {
