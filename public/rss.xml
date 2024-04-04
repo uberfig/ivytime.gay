@@ -7,7 +7,35 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://ivytime.gay/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 15 Feb 2024 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sun, 17 Mar 2024 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>beach</title>
+          <pubDate>Sun, 17 Mar 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/beach/</link>
+          <guid>https://ivytime.gay/art/beach/</guid>
+          <description xml:base="https://ivytime.gay/art/beach/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;sunrise.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>dockworld</title>
+          <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/dockworld/</link>
+          <guid>https://ivytime.gay/art/dockworld/</guid>
+          <description xml:base="https://ivytime.gay/art/dockworld/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;dock-close.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;
+&lt;img src=&quot;&#x2F;art-assets&#x2F;dock-full.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>frontiers</title>
+          <pubDate>Mon, 19 Feb 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/starship-enterprise/</link>
+          <guid>https://ivytime.gay/art/starship-enterprise/</guid>
+          <description xml:base="https://ivytime.gay/art/starship-enterprise/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;hannah.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>creating an open source messaging client for fun and profit</title>
           <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
@@ -19,6 +47,15 @@
 &lt;p&gt;The project currently only supports firefox and there&#x27;s a roadmap on the repo&#x27;s readme that&#x27;s roughly the order I plan to tackle things. The list is very subject to change and I don&#x27;t plan on having the 0.1 release until after hyper&#x27;s vulnerabilities get fixed&lt;&#x2F;p&gt;
 &lt;p&gt;:3&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;gaterdile_first_look.png&quot; alt=&quot;final result&quot; title=&quot;screenshot of gaterdile as of now. it currently supports message replies, twimoji and multiline comments with many more features to come&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>bonnie throne</title>
+          <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/bonnie-throne/</link>
+          <guid>https://ivytime.gay/art/bonnie-throne/</guid>
+          <description xml:base="https://ivytime.gay/art/bonnie-throne/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;bonnie-throne.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
@@ -49,12 +86,12 @@
 &lt;&#x2F;div&gt;</description>
       </item>
       <item>
-          <title>me</title>
-          <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+          <title>me2</title>
+          <pubDate>Thu, 07 Dec 2023 00:00:00 +0000</pubDate>
           <author>Unknown</author>
-          <link>https://ivytime.gay/art/me/</link>
-          <guid>https://ivytime.gay/art/me/</guid>
-          <description xml:base="https://ivytime.gay/art/me/">&lt;p&gt;&lt;img src=&quot;&#x2F;me&#x2F;me.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+          <link>https://ivytime.gay/art/newme/</link>
+          <guid>https://ivytime.gay/art/newme/</guid>
+          <description xml:base="https://ivytime.gay/art/newme/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;newme.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
@@ -388,6 +425,15 @@
 </description>
       </item>
       <item>
+          <title>swmg</title>
+          <pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/swmg/</link>
+          <guid>https://ivytime.gay/art/swmg/</guid>
+          <description xml:base="https://ivytime.gay/art/swmg/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;swmg-ivy.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
           <title>I&#x27;m Tired Of Corporations</title>
           <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
           <author>Unknown</author>
@@ -417,6 +463,24 @@
           <guid>https://ivytime.gay/posts/relearn-writing/</guid>
           <description xml:base="https://ivytime.gay/posts/relearn-writing/">&lt;p&gt;I wrote this post on a whim and I really liked it so I thought I would mirror it here. It&#x27;s also still on my mastodon profile &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110472695040363825&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;laying in bed working on writing a story, it would seem that I really do like writing after all. I&#x27;ve always enjoyed storytelling and reading, but I struggled with english class. through elementary and high school, english was the one subject I dreaded. I struggled with keeping my grades on par with the rest of my classes, and I struggled to simply complete the work. writing a formal essay with word counts, mla formatting, and hard time limits led me to become adverse to writing as a whole. I stopped reading for fun in high school, and the act of reading became stressful, a task that needed to be performed. now I&#x27;m in university, and with my classes, strategically chosen to have as little formal writing as possible, I&#x27;ve started to write in ways I never had before. I&#x27;ve just begun writing down the stories I&#x27;ve had kicking around in my mind for years. as I work, the writing feels like a medium for an art form rather than something mechanical. there are no length requirements or ways it must be formatted. there is no ticking clock that holds the balance of some arbitrary pass or failure. I can just create, and I think that&#x27;s something special&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>wardrobe problems</title>
+          <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/wardrobe-problems/</link>
+          <guid>https://ivytime.gay/art/wardrobe-problems/</guid>
+          <description xml:base="https://ivytime.gay/art/wardrobe-problems/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;wardrobe_problems.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
+      <item>
+          <title>me</title>
+          <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/art/me/</link>
+          <guid>https://ivytime.gay/art/me/</guid>
+          <description xml:base="https://ivytime.gay/art/me/">&lt;p&gt;&lt;img src=&quot;&#x2F;art-assets&#x2F;me.png&quot; alt=&quot;me&quot; title=&quot;drawing of me&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </description>
       </item>
     </channel>
