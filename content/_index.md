@@ -11,6 +11,7 @@ hey everyone, I'm ivy and I'm on various platforms on the internet
 pronouns: she/they/it
 
 my handles:
+- [tumblr: ivytime-gay](https://ivytime-gay.tumblr.com/)
 - <a rel="me" href="https://pronouns.cc/@ivy_mae">pronouns.cc</a>
 - [yastodon: ivy@cutie.city](https://cutie.city/@ivy)
 - [github: uberfig](https://github.com/uberfig)
