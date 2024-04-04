@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<meta property="og:url"         content="{{ current_url }}" >
+<meta property="og:type"        content="article" >
+<meta property="og:title"       content="{{ page.title }}" >
+<meta property="og:description" content="{{ page.description }}" >
+<meta property="twitter:card"   content="summary_large_image" >
+<meta property="twitter:title"  content="{{ page.title }}" >
+
+{% if page.extra.has_preview == true %}
+  {# <meta property="og:image"       content="test" />  #}
+  <meta property="og:image"       content="{{ get_url(path=page.extra.preview_img) }}" >
+  <meta property="twitter:image"       content="{{ get_url(path=page.extra.preview_img) }}" >
+  {# {{ get_url(path=page.preview_img) }} #}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+<article class="post">
+  
+
+{# <p>{{ __tera_context }}</p> #}
+
+<!-- <h1 class="title">
+  {{ page.title }}
+</h1> -->
+<p>
+  <a href="{{ get_url(path='@/art/_index.md') }}">&#60; art</a>
+</p>
+<p class="subtitle"><strong>{{ page.date }}</strong></p>
+
+<!-- <img src="{{ page.extra.preview_img }}" alt="" > -->
+
+{{ page.content | safe }}
+
+</article>
+{% endblock content %}

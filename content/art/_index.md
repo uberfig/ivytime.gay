@@ -1,11 +1,13 @@
 +++
-title = "Ivy's Blog"
+title = "art"
 sort_by = "date"
-template = "blog.html"
-page_template = "blog-page.html"
-description = ""
-preview_img = ""
+template = "art-blog.html"
+page_template = "art-page.html"
 insert_anchor_links = "heading"
-item = ""
+[extra]
+preview_img = ""
+has_preview = false
+previous = ""
+next = ""
 +++
 
