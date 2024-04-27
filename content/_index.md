@@ -16,6 +16,6 @@ my handles:
 - [yastodon: ivy@cutie.city](https://cutie.city/@ivy)
 - [github: uberfig](https://github.com/uberfig)
 - [matrix @figroot:matrix.org](https://matrix.to/#/@figroot:matrix.org)
-- [youtube](https://youtube.com/@ivy_gay)
+- [youtube: @ivy_gay](https://youtube.com/@ivy_gay)
 
 I'm very active on tumblr and you can feel free to get in touch with me there. I typically have ask me anything on so if you would like to get in touch, feel free to message me and I'll probably see it
