@@ -8,5 +8,5 @@ has_preview = false
 preview_img = "/art-assets/dock-close.png"
 +++
 
-![me](/art-assets/dock-close.png "drawing of me")
-![me](/art-assets/dock-full.png "drawing of me")
+![dockworld zoomed](/art-assets/dock-close.png "drawing of a black and white futureistic dockworld zoomed in")
+![dockworld](/art-assets/dock-full.png "drawing of a black and white futureistic dockworld")

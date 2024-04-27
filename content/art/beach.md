@@ -8,4 +8,4 @@ has_preview = false
 preview_img = "/art-assets/sunrise.png"
 +++
 
-![me](/art-assets/sunrise.png "drawing of me")
+![beach](/art-assets/sunrise.png "drawing of a beach using a very similar style to my starship enterprise art. its made up of individual colored lines with varying hues")
