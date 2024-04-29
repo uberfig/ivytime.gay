@@ -18,4 +18,4 @@ my handles:
 - [matrix @figroot:matrix.org](https://matrix.to/#/@figroot:matrix.org)
 - [youtube: @ivy_gay](https://youtube.com/@ivy_gay)
 
-I'm very active on tumblr and you can feel free to get in touch with me there. I typically have ask me anything on so if you would like to get in touch, feel free to message me and I'll probably see it
+I'm very active on tumblr or mastodon and you can feel free to get in touch with me there. On Tumblr I typically have ask me anything on so if you would like to get in touch, feel free to message me and I'll probably see it
