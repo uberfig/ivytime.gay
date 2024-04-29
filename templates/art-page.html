@@ -28,7 +28,7 @@
   {{ page.title }}
 </h1> -->
 <p>
-  <a href="{{ get_url(path='@/art/_index.md') }}">&#60; art</a>
+  <a href="{{ get_url(path='@/art/_index.md') }}" class="link_button">&#60; art</a>
 </p>
 <p class="subtitle"><strong>{{ page.date }}</strong></p>
 
@@ -38,11 +38,11 @@
 
 <div class="article-bottom-nav">
   {% if page.lower %}
-  <a href="{{ page.lower.permalink }}" class="bottom-next">&lt;next</a>
+  <a href="{{ page.lower.permalink }}" class="bottom-next link_button">&lt;next</a>
   {% endif %}
   
   {% if page.higher %}
-  <a href="{{ page.higher.permalink }}" class="bottom-previous">previous&gt;</a>
+  <a href="{{ page.higher.permalink }}" class="bottom-previous link_button">previous&gt;</a>
   {% endif %}
 </div>
 

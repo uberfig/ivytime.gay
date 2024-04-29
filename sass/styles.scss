@@ -496,6 +496,24 @@ section {
         }
     }
 
+    .link_button {
+        text-decoration: none;
+        border: none;
+        border-radius: 6px;
+        border-width: 2px;
+        border-style: solid;
+        padding: 6px;
+    
+        font: 100% $font-stack;
+    
+        color: $mutedAccent;
+        background-color: #e6e6e6;
+        opacity: 0.9;
+    
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
     @media screen and (max-width: 1000px) {
         margin-right: 3%;
         margin-left: 3%;
