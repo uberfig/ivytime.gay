@@ -17,11 +17,17 @@ $mutedAccent: rgb(49, 137, 96);
 // }
 html {
     font-size: 20px;
+    background-color: black;
+    // background-color: $backgroundColor;
+}
+
+body {
     background-color: $backgroundColor;
 }
 
 section {
     min-height: calc(100vh - 7.95rem);
+    background-color: $backgroundColor;
 }
 
 .cardContainer {
