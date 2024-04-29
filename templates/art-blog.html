@@ -26,7 +26,6 @@
 <ul class="art-cardContainer"> 
   <!-- If you are using pagination, section.pages will be empty. You need to use the paginator object -->
   {% for page in section.pages %}
-  {# <li> #}
 
     <div class="art-prev">
       <!-- <a href="{{ page.permalink | safe }}"> -->
@@ -39,12 +38,8 @@
               </a>
             {%- endif %}
           </div>
-
-        <!-- <h1>{{ page.title }}</h1> -->
-        <!-- <hr> -->
       </a>
     </div>
-  {# </li> #}
   {% endfor %}
 </ul>
 

@@ -36,5 +36,16 @@
 
 {{ page.content | safe }}
 
+<div class="article-bottom-nav">
+  {% if page.lower %}
+  <a href="{{ page.lower.permalink }}" class="bottom-next">&lt;next</a>
+  {% endif %}
+  
+  {% if page.higher %}
+  <a href="{{ page.higher.permalink }}" class="bottom-previous">previous&gt;</a>
+  {% endif %}
+</div>
+
+
 </article>
 {% endblock content %}
