@@ -553,6 +553,29 @@ section {
     }
 }
 
+.analytics {
+    @include markdown;
+    max-width: 900px;
+
+    margin-right: 4%;
+    margin-left: 4%;
+
+    @media screen and (max-width: 1000px) {
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+
+    @media screen and (max-width: 700px) {
+        margin-right: 2%;
+        margin-left: 2%;
+    }
+
+    .inline {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 body {
     margin: 0%;
 }
