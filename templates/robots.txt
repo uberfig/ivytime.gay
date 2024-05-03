@@ -92,4 +92,4 @@ User-agent: YouBot
 Disallow: /
 
 
-Sitemap: https://ivytime.gay/sitemap.xml
+Sitemap: {{ get_url(path="sitemap.xml") }}
