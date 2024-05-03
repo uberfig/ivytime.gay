@@ -570,11 +570,21 @@ section {
         margin-left: 2%;
     }
 
+    hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     .inline {
         display: flex;
         flex-direction: row;
         div {
             margin-left: auto;
+            p {
+                text-wrap: nowrap;
+                white-space: nowrap;
+            }
+            
         }
     }
 }
