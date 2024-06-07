@@ -293,6 +293,7 @@ section {
     }
 
     pre {
+        tab-size: 4;
         border-radius: 4px;
         padding: 0.6rem;
         background-color: $backgroundDeep;
@@ -387,7 +388,8 @@ section {
         }
     }
 
-    p code {
+    p code, 
+    li code {
         border: none;
         background-color: $backgroundDeep;
         padding-left: 0.2rem;
