@@ -47,3 +47,5 @@ highlight_theme = "dracula"
 site_name = "ivytime"
 start_year = "2023"
 curr_year = "24"
+disquis = true
+disquis_link = "https://ivytime.disqus.com/embed.js"

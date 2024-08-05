@@ -9,6 +9,7 @@ generate_feed = true
 [extra]
 preview_img = ""
 has_preview = false
+disquis = true
 +++
 
 # welcome to my blog
