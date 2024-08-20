@@ -9,6 +9,6 @@ insert_anchor_links = "heading"
 ## sites
 - [ivytime.gay](https://ivytime.gay)
 - [The Bunni Pen](https://sayori.tpgc.me/)
-- [jacobswackyworld](https://jacobswackyworld.ca)
 - [Hannah](https://tpgc.me/)
 - [The Bomb Shelter](http://tbs.mywire.org/)
+<!-- - [jacobswackyworld](https://jacobswackyworld.ca) -->
