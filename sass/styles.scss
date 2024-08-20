@@ -54,6 +54,7 @@ section {
     @media screen and (max-width: 630px) {
         margin-right: 2%;
         margin-left: 2%;
+
         .art-prev {
             margin-left: auto;
             margin-right: auto;
@@ -76,6 +77,7 @@ section {
         filter: brightness(70%);
         transition: filter 0.8s;
     }
+
     img:hover {
         filter: brightness(100%);
     }
@@ -389,7 +391,7 @@ section {
         }
     }
 
-    p code, 
+    p code,
     li code {
         border: none;
         background-color: $backgroundDeep;
@@ -417,6 +419,7 @@ section {
 
         font-size: 1.5rem;
         font-weight: 600;
+
         &:hover {
             color: $accentColor;
             opacity: 1;
@@ -435,14 +438,18 @@ section {
         padding: 0%;
         list-style: none;
         display: inline;
+
         li {
             display: inline;
         }
+
         li::before {
             content: none;
         }
+
         @media screen and (max-width: 500px) {
             display: block;
+
             li {
                 display: block;
             }
@@ -509,13 +516,13 @@ section {
         border-width: 2px;
         border-style: solid;
         padding: 6px;
-    
+
         font: 100% $font-stack;
-    
+
         color: $mutedAccent;
         background-color: #e6e6e6;
         opacity: 0.9;
-    
+
         font-size: 1.1rem;
         font-weight: 600;
     }
@@ -584,13 +591,15 @@ section {
     .inline {
         display: flex;
         flex-direction: row;
+
         div {
             margin-left: auto;
+
             p {
                 text-wrap: nowrap;
                 white-space: nowrap;
             }
-            
+
         }
     }
 }
@@ -601,9 +610,23 @@ body {
 
 .two_content {
     aside {
+        .steam {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         display: flex;
         flex-wrap: wrap;
         margin-left: 3%;
+        padding: 5px;
         padding-top: 10px;
 
         @media screen and (max-width: 700px) {
