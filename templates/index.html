@@ -7,7 +7,8 @@
 <meta property="og:title" content="Ivytime" >
 <meta property="og:description" content="{{ section.description }}" >
 {% if section.extra.has_preview %}
-<meta property="og:image" content="{{ section.extra.preview_img }}" >
+  <meta property="og:image"       content="{{ get_url(path=section.extra.preview_img) }}" >
+  <meta property="twitter:image"       content="{{ get_url(path=section.extra.preview_img) }}" >
 {% endif %}
 
 {% endblock %}
