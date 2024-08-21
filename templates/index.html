@@ -6,8 +6,8 @@
 <meta property="og:type" content="article" >
 <meta property="og:title" content="Ivytime" >
 <meta property="og:description" content="{{ section.description }}" >
-{% if section.has_preview %}
-<meta property="og:image" content="{{ section.preview_img }}" >
+{% if section.extra.has_preview %}
+<meta property="og:image" content="{{ section.extra.preview_img }}" >
 {% endif %}
 
 {% endblock %}

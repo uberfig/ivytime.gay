@@ -2,6 +2,7 @@
 title = "welcome to my website"
 description = "my personal site on the interweb"
 # insert_anchor_links = "none"
+[extra]
 preview_img = "/preview.png"
 has_preview = true
 +++
