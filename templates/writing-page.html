@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block head %} 
+<meta property="og:url"         content="{{ current_url }}" >
+<meta property="og:type"        content="article" >
+<meta property="og:title"       content="{{ page.title }}" >
+<meta property="og:description" content="{{ page.description }}" >
+<meta property="twitter:card"   content="summary_large_image" >
+<meta property="twitter:title"  content="{{ page.title }}" >
+
+{% if page.extra.has_preview == true %}
+  {# <meta property="og:image"       content="test" />  #}
+  <meta property="og:image"       content="{{ get_url(path=page.extra.preview_img) }}" >
+  <meta property="twitter:image"       content="{{ get_url(path=page.extra.preview_img) }}" >
+  {# {{ get_url(path=page.preview_img) }} #}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<article class="post">
+{# <p>{{ __tera_context }}</p> #}
+
+<h1 class="title">
+  {{ page.title }}
+</h1>
+<p class="subtitle"><strong>{{ page.date }}</strong></p>
+
+{{ page.content | safe }}
+
+<div class="article-bottom-nav">
+  {% if page.lower %}
+  <a href="{{ page.lower.permalink }}" class="bottom-next">&lt;previous</a>
+  {% endif %}
+  
+  {% if page.higher %}
+  <a href="{{ page.higher.permalink }}" class="bottom-previous">next&gt;</a>
+  {% endif %}
+</div>
+
+{% set render_disquis = config.extra.disquis %}
+
+{% if render_disquis == true %} 
+  <div id="disqus_thread"></div>
+  <script>
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      
+      var disqus_config = function () {
+      this.page.url = '{{ current_url | safe}}';  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = '{{ current_path | safe}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '{{config.extra.disquis_link | safe}}';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
+
+
+</article>
+{% endblock content %}

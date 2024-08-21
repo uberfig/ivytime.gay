@@ -265,7 +265,8 @@ section {
     p,
     pre,
     a,
-    ul {
+    ul,
+    ol {
         // margin-left: 3vw;
         // margin-right: 3vw;
 
@@ -387,6 +388,37 @@ section {
             color: $accentColor;
             display: inline-block;
             width: 0.7em;
+            margin-left: -1rem;
+        }
+    }
+
+    ol {
+        // list-style: none;
+        list-style: none;
+        padding-left: 1.8em;
+        counter-reset: item;
+
+        li {
+            counter-increment: item;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+
+            p {
+                display: inline;
+                padding-left: 0%;
+                margin-left: 0%;
+            }
+        }
+
+        li::before {
+            // content: "•";
+            content: counter(item) ".";
+            font-weight: bold;
+            color: $accentColor;
+            display: inline-block;
+            width: 1rem;
             margin-left: -1rem;
         }
     }
