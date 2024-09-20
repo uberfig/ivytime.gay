@@ -2,13 +2,13 @@
 
 {% block head %}
 
-<meta property="og:url" content="{{ current_url }}" >
-<meta property="og:type" content="article" >
-<meta property="og:title" content="Ivytime" >
-<meta property="og:description" content="{{ section.description }}" >
+<meta property="og:url" content="{{ current_url }}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ivytime">
+<meta property="og:description" content="{{ section.description }}">
 {% if section.extra.has_preview %}
-  <meta property="og:image"       content="{{ get_url(path=section.extra.preview_img) }}" >
-  <meta property="twitter:image"       content="{{ get_url(path=section.extra.preview_img) }}" >
+<meta property="og:image" content="{{ get_url(path=section.extra.preview_img) }}">
+<meta property="twitter:image" content="{{ get_url(path=section.extra.preview_img) }}">
 {% endif %}
 
 {% endblock %}
@@ -23,23 +23,34 @@
     </h1>
 
     {{ section.content | safe }}
-    
+
     <p>
-    <a href="{{ get_url(path='@/posts/_index.md') }}" class="section-link">Blog</a>
-    <a href="{{ get_url(path='@/art/_index.md') }}" class="section-link">Art</a>
+      <a href="{{ get_url(path='@/posts/_index.md') }}" class="section-link">Blog</a>
+      <a href="{{ get_url(path='@/art/_index.md') }}" class="section-link">Art</a>
     </p>
 
     <br>
     <hr>
-    <p class="center">Part of the <a href="{{ get_url(path='@/goobers/_index.md') }}">lil' goober webring</a></p>
     <div class="center">
       <ul class="webring">
         <li><a href="http://tbs.mywire.org/">&#60;&#8208;The&#160;Bomb&#160;Shelter</a></li>
-        <li>ivytime</li>
+        <li> | <a href="{{ get_url(path='@/goobers/_index.md') }}">the lil' goober webring</a> | </li>
         <li><a href="https://sayori.tpgc.me/">The&#160;Bunni&#160;Pen&#8208;&#62;</a></li>
       </ul>
     </div>
+
+    <br>
+
+    <div class="center">
+      <ul class="webring">
+        <li><a href="https://fediring.net/previous?host=ivytime.gay">&#60;&#8208;</a></li>
+        <li> | <a href="https://fediring.net/">fediring</a> | </li>
+        <li><a href="https://fediring.net/next?host=ivytime.gay">&#8208;&#62;</a></li>
+      </ul>
+    </div>
     <hr>
+
+
 
   </article>
 
@@ -53,28 +64,34 @@
       Cool Goobers
     </p>
     <div class="badges">
-      <a href="https://ivytime.gay" target="_blank"><img src="/badges/ivytime.gay.png" alt="ivy gay" title="ivytime badge :p"></a>
+      <a href="https://ivytime.gay" target="_blank"><img src="/badges/ivytime.gay.png" alt="ivy gay"
+          title="ivytime badge :p"></a>
       <a href="https://labyrinth.zone/yassie_j" target="_blank"><img src="/badges/yassie_j.gif" alt="Yassie badge"></a>
-      <a href="https://www.theresnotime.co.uk/" target="_blank"><img src="/badges/theresnotime.png" alt="TheresNoTime"></a>
-      <a rel="noreferrer" href="https://maia.crimew.gay" target="_blank"><img src="/badges/maia.crimew.gay.png" alt="maia crimew" title="maia crimew badge :3"></a>
-      <a href="https://girlthi.ng/~thermia/" target="_blank"><img src="https://girlthi.ng/~thermia/img/88x31/thermia.gif" alt="thermia's button"></a>
+      <a href="https://www.theresnotime.co.uk/" target="_blank"><img src="/badges/theresnotime.png"
+          alt="TheresNoTime"></a>
+      <a rel="noreferrer" href="https://maia.crimew.gay" target="_blank"><img src="/badges/maia.crimew.gay.png"
+          alt="maia crimew" title="maia crimew badge :3"></a>
+      <a href="https://girlthi.ng/~thermia/" target="_blank"><img
+          src="https://girlthi.ng/~thermia/img/88x31/thermia.gif" alt="thermia's button"></a>
     </div>
     <p class="center">
       Misc.
     </p>
     <div class="badges">
-      <a href="https://privacytests.org/" target="_blank"><img src="/badges/chrome.gif" alt="same shit, different asshole with explorer and chrome"></a>
+      <a href="https://privacytests.org/" target="_blank"><img src="/badges/chrome.gif"
+          alt="same shit, different asshole with explorer and chrome"></a>
       <img src="/badges/anythingbutchrome.gif" alt="anything but chrome">
       <img src="/badges/gaywebring.gif" alt="this website is gay">
-      <a href="https://www.mozilla.org/en-CA/firefox/new/" target="_blank"><img src="/badges/firefox4.gif" alt="tested on firefox"></a> 
+      <a href="https://www.mozilla.org/en-CA/firefox/new/" target="_blank"><img src="/badges/firefox4.gif"
+          alt="tested on firefox"></a>
     </div>
     {# <p>
-      <div style="width: 350px; height: 470;">
+    <div style="width: 350px; height: 470;">
       <iframe style="border-radius:12px"
         src="https://open.spotify.com/embed/playlist/1lS2WY6dYyGHzl72Hwqc2f?utm_source=generator" width="100%"
         height="470" frameBorder="0" allowfullscreen=""
         allow="autoplay; clipboard-write; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
+    </div>
     </p> #}
   </aside>
 </div>
