@@ -460,10 +460,6 @@ section {
         }
     }
 
-    .center {
-        text-align: center;
-    }
-
     .webring {
         width: 100%;
         margin: 0%;
@@ -491,6 +487,10 @@ section {
     br {
         margin-top: 0.25em;
     }
+}
+
+.center {
+    text-align: center;
 }
 
 .rssbutt {
