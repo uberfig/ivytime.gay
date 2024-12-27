@@ -6,7 +6,6 @@ description = "I've started making a persistent messaging platform with rust"
 [extra]
 has_preview = true
 preview_img = "/img/gaterdile_first_look.png"
-disquis = false
 +++
 
 I've recently taken to hanging out with a group of silly goobers and we've come to rely on discord for planning, sharing info, and just hanging out. Over time I've had some annoyances and we discussed switching to self hosting another platform like matrix but there wasn't anything that fit our needs.
