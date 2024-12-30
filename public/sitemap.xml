@@ -65,6 +65,10 @@
         <loc>https://ivytime.gay/posts/</loc>
     </url>
     <url>
+        <loc>https://ivytime.gay/posts/2024-wrapped/</loc>
+        <lastmod>2024-12-27</lastmod>
+    </url>
+    <url>
         <loc>https://ivytime.gay/posts/another-messaging-client-in-rust/</loc>
         <lastmod>2024-02-15</lastmod>
     </url>
