@@ -1,0 +1,338 @@
+@use '_theme' as theme;
+@mixin markdown {
+    font: 100% theme.$font-stack;
+
+    font-size: 1rem;
+    // width: 88%;
+    // margin: auto;
+
+    tr {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .youtube {
+        aspect-ratio: 16/9;
+        border: none;
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .game {
+        aspect-ratio: 16/9;
+        border: none;
+        overflow: hidden;
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 2%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr {
+        &:nth-child(odd) {
+            background-color: theme.$backgroundDeep;
+        }
+
+        &:hover {
+            background-color: theme.$accentColor;
+        }
+    }
+
+    th {
+        background-color: theme.$mutedAccent;
+    }
+
+    // tr:nth-child(even) {
+    //     background-color: #dddddd;
+    // }
+
+    // table {
+    //     border-collapse: collapse;
+
+    //     min-width: 50%;
+
+    //     tr,
+    //     td,
+    //     th {
+    //         border: 2px solid #ddd;
+    //     }
+
+    //     // tbody,
+    //     // thead {
+
+    //         // tr,
+    //         // td,
+    //         // th {
+
+    //         // }
+    //     // }
+
+    //     tbody {
+    //         border-collapse: collapse;
+
+    //         td,
+    //         th {
+    //             background-color: theme.$backgroundDeep;
+    //         }
+    //     }
+
+    //     thead {
+
+    //         tr,
+    //         th {
+    //             background-color: theme.$darkAccent;
+    //         }
+    //     }
+    // }
+
+    p,
+    pre,
+    a,
+    ul,
+    ol {
+        // margin-left: 3vw;
+        // margin-right: 3vw;
+
+        right {
+            float: right;
+        }
+    }
+
+    .subtitle {
+        font-size: medium;
+        padding-top: 0%;
+    }
+
+    a {
+        color: theme.$mutedAccent;
+        padding: 0%;
+        margin: 0%;
+    }
+
+    a:hover {
+        color: theme.$accentColor;
+    }
+
+    code {
+        font-family: monospace;
+        font-weight: 100;
+        font-size: 0.8rem;
+    }
+
+    pre {
+        tab-size: 4;
+        border-radius: 4px;
+        padding: 0.6rem;
+        background-color: theme.$backgroundDeep;
+        overflow-x: scroll;
+        page-break-inside: avoid;
+    }
+
+    blockquote {
+        margin-left: 2vw;
+
+        * {
+            margin-left: 0vw;
+            margin-right: 0vw;
+
+            border-left: 4px solid theme.$accentColor;
+            padding: 1rem;
+        }
+    }
+
+    hr {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        border: 2px solid theme.$accentColor;
+    }
+
+    .top {
+        margin: 0%;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin: auto;
+        padding-top: 1rem;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .permalink {
+        color: theme.$fontColor;
+        text-decoration: none;
+        color: theme.$darkAccent;
+
+        h2::before {
+            display: inline-block;
+            content: "#";
+            margin-left: -1em;
+            width: 0.7em;
+        }
+
+        &:hover {
+            color: theme.$accentColor;
+
+            h2::before {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 1.8em;
+
+        li {
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+
+            p {
+                display: inline;
+                padding-left: 0%;
+                margin-left: 0%;
+            }
+        }
+
+        li::before {
+            content: "•";
+            font-weight: bolder;
+            color: theme.$accentColor;
+            display: inline-block;
+            width: 0.7em;
+            margin-left: -1rem;
+        }
+    }
+
+    ol {
+        // list-style: none;
+        list-style: none;
+        padding-left: 1.8em;
+        counter-reset: item;
+
+        li {
+            counter-increment: item;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+
+            p {
+                display: inline;
+                padding-left: 0%;
+                margin-left: 0%;
+            }
+        }
+
+        li::before {
+            // content: "•";
+            content: counter(item) ".";
+            font-weight: bold;
+            color: theme.$accentColor;
+            display: inline-block;
+            width: 1rem;
+            margin-left: -1rem;
+        }
+    }
+
+    p code,
+    li code {
+        border: none;
+        background-color: theme.$backgroundDeep;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+        border-radius: 3px;
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+
+    .section-link {
+        text-decoration: none;
+        border: none;
+        border-radius: 6px;
+        border-width: 2px;
+        border-style: solid;
+        padding: 6px;
+
+        font: 100% theme.$font-stack;
+        font-size: 1.6rem;
+
+        color: theme.$mutedAccent;
+        background-color: #e6e6e6;
+        opacity: 0.9;
+
+        font-size: 1.5rem;
+        font-weight: 600;
+
+        &:hover {
+            color: theme.$accentColor;
+            opacity: 1;
+            background-color: #fff;
+            // color: #ddd
+        }
+    }
+
+    .webring {
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
+        list-style: none;
+        display: inline;
+
+        li {
+            display: inline;
+        }
+
+        li::before {
+            content: none;
+        }
+
+        @media screen and (max-width: 500px) {
+            display: block;
+
+            li {
+                display: block;
+            }
+        }
+    }
+
+    br {
+        margin-top: 0.25em;
+    }
+}
