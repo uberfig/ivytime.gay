@@ -46,6 +46,6 @@ highlight_theme = "dracula"
 # Put all your custom variables here
 site_name = "ivytime"
 start_year = "2023"
-curr_year = "24"
+curr_year = "25"
 disquis = true
 disquis_link = "https://ivytime.disqus.com/embed.js"
