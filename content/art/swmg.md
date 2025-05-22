@@ -4,7 +4,7 @@ date= 2023-06-21
 draft= false
 description = ""
 [extra]
-has_preview = false
+has_preview = true
 preview_img = "/art-assets/swmg-ivy.png"
 +++
 

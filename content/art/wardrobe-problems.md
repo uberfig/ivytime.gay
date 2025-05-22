@@ -4,7 +4,7 @@ date= 2023-04-17
 draft= false
 description = ""
 [extra]
-has_preview = false
+has_preview = true
 preview_img = "/art-assets/wardrobe_problems.png"
 +++
 

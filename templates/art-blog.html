@@ -32,7 +32,7 @@
 
         <div>
             {%- if page.extra.preview_img is matching("[.](jpg|png)$") -%}
-              {% set image = resize_image(path=page.extra.preview_img, width=300, height=300) %}
+              {% set image = resize_image(path=page.extra.preview_img, width=300, height=300, op="fill") %}
               <a href="{{ page.permalink | safe }}">
                 <img src="{{ image.url }}" title="link to {{ page.title }}"/>
               </a>
