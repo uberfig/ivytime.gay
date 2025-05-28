@@ -4,7 +4,7 @@ date= 2024-04-26
 draft= false
 description = ""
 [extra]
-has_preview = false
+has_preview = true
 preview_img = "/art-assets/studies/aki.jpg"
 +++
 

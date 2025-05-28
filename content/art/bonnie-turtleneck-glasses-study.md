@@ -4,7 +4,7 @@ date= 2024-07-29
 draft= false
 description = ""
 [extra]
-has_preview = false
+has_preview = true
 preview_img = "/art-assets/pb-turtleneck-glasses-study.jpg"
 +++
 
