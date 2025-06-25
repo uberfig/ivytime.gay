@@ -16,8 +16,8 @@ pronouns: she/they/it
 my handles:
 - [tumblr: ivytime-gay](https://ivytime-gay.tumblr.com/)
 - <a rel="me" href="https://pronouns.cc/@ivy_mae">pronouns.cc</a>
-- [new mastodon: @ivy_gay@wetdry.world](https://wetdry.world/@ivy_gay)
-- [old yastodon (moved to new mastodon): @ivy@cutie.city](https://cutie.city/@ivy)
+- <a rel="me" href="https://wetdry.world/@ivy_gay">art/bridged acct: @ivy_gay@wetdry.world</a>
+- <a rel="me" href="https://mastodon.catgirl.cloud/@ivy_gay">programming/personal/robot posting: @ivy_gay@catgirl.cloud</a>
 - [github: uberfig](https://github.com/uberfig)
 - [matrix @figroot:matrix.org](https://matrix.to/#/@figroot:matrix.org)
 - [youtube: @ivy_gay](https://youtube.com/@ivy_gay)
