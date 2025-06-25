@@ -11,7 +11,7 @@ preview_img = "/art-assets/2025/june20/peeker.jpg"
 I did a few perspective studies today and figured I'd lump them together
 
 ![fisheye drawing of the adhd creature staring at the viewer 
-its a silly round cat like goober with giant, very dilated eyes and a basic smile](/art-assets/2025/june21/peeker.jpg)
+its a silly round cat like goober with giant, very dilated eyes and a basic smile](/art-assets/2025/june20/peeker.jpg)
 
 my friend also colored this on over on the fedi :3
 
