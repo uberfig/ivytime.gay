@@ -20,5 +20,8 @@ my handles:
 - <a rel="me" href="https://mastodon.catgirl.cloud/@ivy_gay">programming/personal/robot posting: @ivy_gay@catgirl.cloud</a>
 - [github: uberfig](https://github.com/uberfig)
 - [youtube: @ivy_gay](https://youtube.com/@ivy_gay)
+- [artfight: ivy_gay](https://artfight.net/~ivy_gay)
 
-I'm very active on tumblr or mastodon and you can feel free to get in touch with me there. On Tumblr I typically have ask me anything on so if you would like to get in touch, feel free to message me and I'll probably see it
+<!-- I'm very active on tumblr or mastodon and you can feel free to get in touch with me there. On Tumblr I typically have ask me anything on so if you would like to get in touch, feel free to message me and I'll probably see it. -->
+
+I have my art account (@ivy_gay@wetdry.world) bridged to bluesky at [@fedi.ivytime.gay](https://bsky.app/profile/fedi.ivytime.gay) but please go follow [@ap.brid.gy](https://bsky.app/profile/ap.brid.gy) before following so I can see your interactions 
