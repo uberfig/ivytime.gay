@@ -1,6 +1,6 @@
 +++
 title= "08 july 2025 nomad camp"
-date= 2025-08-08
+date= 2025-07-08
 draft= false
 description = ""
 [extra]

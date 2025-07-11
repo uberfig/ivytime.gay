@@ -1,6 +1,6 @@
 +++
 title= "25 june 2025 ava studies"
-date= 2025-07-25
+date= 2025-06-25
 draft= false
 description = ""
 [extra]
