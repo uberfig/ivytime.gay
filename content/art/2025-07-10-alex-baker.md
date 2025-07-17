@@ -8,7 +8,7 @@ has_preview = true
 preview_img = "/art-assets/2025/july-artfight/alex-baker-preview.png"
 +++
 
-created added a new character sheet to my artfight 
+added a new character sheet to my artfight 
 
 👉 [view on artfight.net](https://artfight.net/character/7655974.alex-baker)
 
