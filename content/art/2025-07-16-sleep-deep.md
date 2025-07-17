@@ -12,4 +12,4 @@ completed an artfight revenge for [@zinabug's](https://zinabug.tumblr.com/) char
 
 👉 [view on artfight.net](https://artfight.net/attack/11447264.sleep-deep-dr-hudson-fay)
 
-![Digital painting of Dr. Hudson Fay floating peacefully underwater. Ae have a large orange squid tattoo up aer right arm and a bunch of jellyfish on the left. Ae have a gold earing and black hair and are wearing a loose tank top, diving pants, and flippers. There are astral jellyfish and a squid behind Hudson and there is the text Sleep Deep with the first word in the top left corner and the second in the bottom right](/art-assets/2025/july-artfight/sleep-deep.png)
+![Digital painting of Dr. Hudson Fay floating peacefully underwater. Ae have a large orange squid tattoo up aer right arm and a bunch of jellyfish on the left. Ae have a gold earring and black hair and are wearing a loose tank top, diving pants, and flippers. There are astral jellyfish and a squid behind Hudson and there is the text Sleep Deep with the first word in the top left corner and the second in the bottom right](/art-assets/2025/july-artfight/sleep-deep.png)
