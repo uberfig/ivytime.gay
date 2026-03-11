@@ -2,7 +2,7 @@
 title= "My 2024 year in review"
 date= 2024-12-27
 draft= false
-description = "Just me thinking about this past year +media I enjoyed"
+description = "Just me thinking about this past year and media I enjoyed"
 [extra]
 preview_img = "/preview.png"
 has_preview = true
