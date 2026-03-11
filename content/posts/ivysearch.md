@@ -1,6 +1,6 @@
 +++
 title= "Making A Search Engine From Scratch"
-date= 2024-12-27
+date= 2026-03-10
 draft= false
 description = "my silly toy search engine ivysearch"
 [extra]

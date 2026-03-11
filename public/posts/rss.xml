@@ -7,7 +7,19 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://ivytime.gay/posts/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Fri, 27 Dec 2024 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Making A Search Engine From Scratch</title>
+          <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/posts/ivysearch/</link>
+          <guid>https://ivytime.gay/posts/ivysearch/</guid>
+          <description xml:base="https://ivytime.gay/posts/ivysearch/">&lt;p&gt;I was sitting in my graph theory class one day and we started talking about pagerank so I got the urge to create a little toy search engine that can crawl sites, do basic keyword analysis, and perform the pagerank algorithm&lt;&#x2F;p&gt;
+&lt;p&gt;Its very basic and since I didn&#x27;t use a database as I felt that was cheating I opted to go for the approach of writing everything to a giant json dump (bonus that its readable) which means that it can get big fast and the whole thing needs to be stored in memory which kinda sucks but it was only meant to be a toy anyway&lt;&#x2F;p&gt;
+&lt;p&gt;At some point I may consider indexing the abstracts and titles of wikipedia using some downloads but that will have to wait for me to get another random burst of motivation or someone cares enough to poke me and ask me to do it&lt;&#x2F;p&gt;
+&lt;p&gt;if you wanna try it out the engine is up &lt;a href=&quot;https:&#x2F;&#x2F;search.ivytime.gay&#x2F;&quot;&gt;here&lt;&#x2F;a&gt; and the repo can be found &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;uberfig&#x2F;ivysearch&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>My 2024 year in review</title>
           <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
@@ -39,18 +51,6 @@
 &lt;p&gt;that wraps up my year in review. I felt like doing one like a journal of sorts since it&#x27;s been ages since I made a blog post. Kept meaning to make ones but I kept building it up in my head to be bigger than it needs to be so with a little practice I want to try and lower these barriers to working on things and accept that the things I do don&#x27;t need to be perfect or completely finished and polished, I can just put whatever I want out there and over time what I make will get better with the bonus of being much more authentic to myself&lt;&#x2F;p&gt;
 &lt;p&gt;hope whoever&#x27;s reading this has a nice rest of the year and a happy new years&lt;&#x2F;p&gt;
 &lt;p&gt;-Ivy 💜&lt;&#x2F;p&gt;
-</description>
-      </item>
-      <item>
-          <title>Making A Search Engine From Scratch</title>
-          <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
-          <link>https://ivytime.gay/posts/ivysearch/</link>
-          <guid>https://ivytime.gay/posts/ivysearch/</guid>
-          <description xml:base="https://ivytime.gay/posts/ivysearch/">&lt;p&gt;I was sitting in my graph theory class one day and we started talking about pagerank so I got the urge to create a little toy search engine that can crawl sites, do basic keyword analysis, and perform the pagerank algorithm&lt;&#x2F;p&gt;
-&lt;p&gt;Its very basic and since I didn&#x27;t use a database as I felt that was cheating I opted to go for the approach of writing everything to a giant json dump (bonus that its readable) which means that it can get big fast and the whole thing needs to be stored in memory which kinda sucks but it was only meant to be a toy anyway&lt;&#x2F;p&gt;
-&lt;p&gt;At some point I may consider indexing the abstracts and titles of wikipedia using some downloads but that will have to wait for me to get another random burst of motivation or someone cares enough to poke me and ask me to do it&lt;&#x2F;p&gt;
-&lt;p&gt;if you wanna try it out the engine is up &lt;a href=&quot;https:&#x2F;&#x2F;search.ivytime.gay&#x2F;&quot;&gt;here&lt;&#x2F;a&gt; and the repo can be found &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;uberfig&#x2F;ivysearch&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 </description>
       </item>
       <item>
