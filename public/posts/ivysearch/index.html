@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="fediverse:creator" content="@ivy_gay@wetdry.world" />
+  <title>ivytime</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+   
+<meta property="og:url"         content="https:&#x2F;&#x2F;ivytime.gay&#x2F;posts&#x2F;ivysearch&#x2F;" >
+<meta property="og:type"        content="article" >
+<meta property="og:title"       content="Making A Search Engine From Scratch" >
+<meta property="og:description" content="my silly toy search engine ivysearch" >
+<meta property="twitter:card"   content="summary_large_image" >
+<meta property="twitter:title"  content="Making A Search Engine From Scratch" >
+
+
+  
+  <meta property="og:image"       content="https://ivytime.gay/preview.png" >
+  <meta property="twitter:image"       content="https://ivytime.gay/preview.png" >
+  
+
+
+</head>
+
+<body>
+
+<nav>
+  <div class="navflex">
+  <a class="logo" href="https://ivytime.gay">
+    <img src="/me256.png" alt="self portrait of me, I have floofy copper/brown hair and a grey turtleneck"
+      style="width:1.2em;height:1.2em;">
+    
+  </a>
+  <a class="text" href="https://ivytime.gay">
+  ivytime
+  </a>
+  </div>
+</nav>
+
+
+  <section class="section">
+    <div class="container">
+      
+<article class="post">
+
+
+<h1 class="title">
+  Making A Search Engine From Scratch
+</h1>
+<p class="subtitle"><strong>2024-12-27</strong></p>
+
+<p>I was sitting in my graph theory class one day and we started talking about pagerank so I got the urge to create a little toy search engine that can crawl sites, do basic keyword analysis, and perform the pagerank algorithm</p>
+<p>Its very basic and since I didn't use a database as I felt that was cheating I opted to go for the approach of writing everything to a giant json dump (bonus that its readable) which means that it can get big fast and the whole thing needs to be stored in memory which kinda sucks but it was only meant to be a toy anyway</p>
+<p>At some point I may consider indexing the abstracts and titles of wikipedia using some downloads but that will have to wait for me to get another random burst of motivation or someone cares enough to poke me and ask me to do it</p>
+<p>if you wanna try it out the engine is up <a href="https://search.ivytime.gay/">here</a> and the repo can be found <a href="https://github.com/uberfig/ivysearch">here</a></p>
+
+
+<div class="article-bottom-nav">
+  
+  <a href="https:&#x2F;&#x2F;ivytime.gay&#x2F;posts&#x2F;2024-wrapped&#x2F;" class="bottom-next">&lt;next</a>
+  
+  
+  
+  <a href="https:&#x2F;&#x2F;ivytime.gay&#x2F;posts&#x2F;another-messaging-client-in-rust&#x2F;" class="bottom-previous">previous&gt;</a>
+  
+</div>
+
+
+
+ 
+  <div id="disqus_thread"></div>
+  <script>
+      /**
+      *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+      
+      var disqus_config = function () {
+      this.page.url = 'https://ivytime.gay/posts/ivysearch/';  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = '/posts/ivysearch/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      
+      (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ivytime.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+</article>
+
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="footflex">
+      <a rel="me" href="https://wetdry.world/@ivy_gay"><img src="/cutiecity.svg" alt="mastodon link"
+          style="width:32px;height:32px;"></a>
+      <a>Site © ivytime 2023-25</a>
+    </div>
+  </footer>
+</body>
+
+</html>
