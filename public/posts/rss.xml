@@ -7,7 +7,32 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://ivytime.gay/posts/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Tue, 10 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Wed, 11 Mar 2026 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Zines Are Cool!</title>
+          <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+          <author>Unknown</author>
+          <link>https://ivytime.gay/posts/zines/</link>
+          <guid>https://ivytime.gay/posts/zines/</guid>
+          <description xml:base="https://ivytime.gay/posts/zines/">&lt;p&gt;Zines are a self published booklet (usually) similar to a magazine (hence the name)&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m a part of a writing club at my university and we do a yearly anthology to try and get everyone writing and doing something together with the goal of becoming published. I really enjoy it and I&#x27;ve contributed a piece to it however its themed and didn&#x27;t quite scratch the itch I had for a more open chance to get my stuff into the world. As I was musing over a short poem and a comic idea I&#x27;d been playing with I decided to try taking a stab at making a themeless monthly zine to get myself and others making stuff and just to have a place for the things we were proud of to go.&lt;&#x2F;p&gt;
+&lt;p&gt;As we all finished up our submissions and it was time to begin putting together the manuscript it became very clear that libreoffice draw wasn&#x27;t going to cut it and I tried finding tutorials for doing it but could find none so I made my own:&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube&quot;&gt;
+    &lt;!-- &lt;div class=&quot;wrapper&quot;&gt; --&gt;
+    &lt;iframe
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;4MtyJICoSD4&quot;
+        webkitallowfullscreen
+        mozallowfullscreen
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+    &lt;!-- &lt;&#x2F;div&gt; --&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I used &lt;a href=&quot;https:&#x2F;&#x2F;www.scribus.net&#x2F;&quot;&gt;scribus&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;flathub.org&#x2F;en&#x2F;apps&#x2F;com.github.jeromerobert.pdfarranger&quot;&gt;pdf arranger&lt;&#x2F;a&gt; as I refuse to ever touch adobe willingly and overall it was a great experience&lt;&#x2F;p&gt;
+&lt;p&gt;For binding I used a long arm stapler I picked up from staples and I used the sliding paper cutter from the library to trim the margins as that makes all the difference especially for being able to flip through it&lt;&#x2F;p&gt;
+&lt;p&gt;Being able to hold our finished product was an awesome feeling and they&#x27;re small and light enough I can mail them to some family members&lt;&#x2F;p&gt;
+&lt;p&gt;If you wanna make a zine, this is the sign! Go make some cool stuff and get it out there! Don&#x27;t let your works rot on a hard drive, make em physical!&lt;&#x2F;p&gt;
+</description>
+      </item>
       <item>
           <title>Making A Search Engine From Scratch</title>
           <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
