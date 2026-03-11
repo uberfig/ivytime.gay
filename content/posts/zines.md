@@ -22,6 +22,6 @@ For binding I used a long arm stapler I picked up from staples and I used the sl
 
 Being able to hold our finished product was an awesome feeling and they're small and light enough I can mail them to some family members
 
-If you wanna make a zine, this is the sign! Go make some cool stuff and get it out there! Don't let your works rot on a hard drive, make em physical!
+If you wanna make a zine, this is the sign! Go make some cool stuff and get it out there! Don't let your works rot on a hard drive or dark corner of your room, get em out there and make em physical!
 
 ![zines](/img/zines.jpg "picture of me holding 7 copies of the finished result")
