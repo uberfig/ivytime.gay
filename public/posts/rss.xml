@@ -11,7 +11,7 @@
       <item>
           <title>Zines Are Cool!</title>
           <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/zines/</link>
           <guid>https://ivytime.gay/posts/zines/</guid>
           <description xml:base="https://ivytime.gay/posts/zines/">&lt;p&gt;Zines are a self published booklet (usually) similar to a magazine (hence the name)&lt;&#x2F;p&gt;
@@ -37,7 +37,7 @@
       <item>
           <title>Making A Search Engine From Scratch</title>
           <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/ivysearch/</link>
           <guid>https://ivytime.gay/posts/ivysearch/</guid>
           <description xml:base="https://ivytime.gay/posts/ivysearch/">&lt;p&gt;I was sitting in my graph theory class one day and we started talking about pagerank so I got the urge to create a little toy search engine that can crawl sites, do basic keyword analysis, and perform the pagerank algorithm&lt;&#x2F;p&gt;
@@ -49,7 +49,7 @@
       <item>
           <title>My 2024 year in review</title>
           <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/2024-wrapped/</link>
           <guid>https://ivytime.gay/posts/2024-wrapped/</guid>
           <description xml:base="https://ivytime.gay/posts/2024-wrapped/">&lt;h2 id=&quot;writing&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#writing&quot; aria-label=&quot;Anchor link for: writing&quot;&gt;writing&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -82,7 +82,7 @@
       <item>
           <title>creating an open source messaging client for fun and profit</title>
           <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/another-messaging-client-in-rust/</link>
           <guid>https://ivytime.gay/posts/another-messaging-client-in-rust/</guid>
           <description xml:base="https://ivytime.gay/posts/another-messaging-client-in-rust/">&lt;p&gt;I&#x27;ve recently taken to hanging out with a group of silly goobers and we&#x27;ve come to rely on discord for planning, sharing info, and just hanging out. Over time I&#x27;ve had some annoyances and we discussed switching to self hosting another platform like matrix but there wasn&#x27;t anything that fit our needs.&lt;&#x2F;p&gt;
@@ -98,7 +98,7 @@
       <item>
           <title>Custom Physics in Bevy</title>
           <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/bevyphysics/</link>
           <guid>https://ivytime.gay/posts/bevyphysics/</guid>
           <description xml:base="https://ivytime.gay/posts/bevyphysics/">&lt;div class=&quot;game&quot; style=&quot;overflow:hidden;&quot;&gt;
@@ -125,7 +125,7 @@
       <item>
           <title>A little dive into NPR shading in Godot</title>
           <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/godotnpr/</link>
           <guid>https://ivytime.gay/posts/godotnpr/</guid>
           <description xml:base="https://ivytime.gay/posts/godotnpr/">&lt;p&gt;When I was playing around with the early Godot 4 releases I stumbled upon a great NPR video from Useless Game Dev and I tried my hand at replicating it in godot&lt;&#x2F;p&gt;
@@ -385,7 +385,7 @@
       <item>
           <title>Meta Meta Meta</title>
           <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/metametameta/</link>
           <guid>https://ivytime.gay/posts/metametameta/</guid>
           <description xml:base="https://ivytime.gay/posts/metametameta/">&lt;p&gt;The Fedi&#x27;s biggest feature and Meta&#x27;s biggest threat lies in moderation&lt;&#x2F;p&gt;
@@ -418,7 +418,7 @@
       <item>
           <title>I Have A Blog Now</title>
           <pubDate>Tue, 04 Jul 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/welcome/</link>
           <guid>https://ivytime.gay/posts/welcome/</guid>
           <description xml:base="https://ivytime.gay/posts/welcome/">&lt;p&gt;With all the craziness of Facebook&#x27;s new platform and my tendency to post loooong posts from time to time, I thought it would be a good idea to put things here. I don’t really have a posting schedule or anything all that formal, I’ll just put things here when I think they’re important or if I want to archive it&lt;&#x2F;p&gt;
@@ -429,7 +429,7 @@
       <item>
           <title>My &#x27;Trans Story&#x27;</title>
           <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/mytransstory/</link>
           <guid>https://ivytime.gay/posts/mytransstory/</guid>
           <description xml:base="https://ivytime.gay/posts/mytransstory/">&lt;p&gt;mirrored from &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110591582134325352&quot;&gt;mastodon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -455,7 +455,7 @@
       <item>
           <title>I&#x27;m Tired Of Corporations</title>
           <pubDate>Sun, 11 Jun 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/corporations/</link>
           <guid>https://ivytime.gay/posts/corporations/</guid>
           <description xml:base="https://ivytime.gay/posts/corporations/">&lt;p&gt;mirrored from &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110523929241532214&quot;&gt;mastodon&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
@@ -477,7 +477,7 @@
       <item>
           <title>Relearning Writing</title>
           <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
-          <author>Unknown</author>
+          <author>ivy gay</author>
           <link>https://ivytime.gay/posts/relearn-writing/</link>
           <guid>https://ivytime.gay/posts/relearn-writing/</guid>
           <description xml:base="https://ivytime.gay/posts/relearn-writing/">&lt;p&gt;I wrote this post on a whim and I really liked it so I thought I would mirror it here. It&#x27;s also still on my mastodon profile &lt;a href=&quot;https:&#x2F;&#x2F;cutie.city&#x2F;@ivy&#x2F;110472695040363825&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
