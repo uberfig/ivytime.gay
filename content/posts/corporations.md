@@ -29,7 +29,7 @@ most of my friends don't even know the name of a single politician for our regio
 
 the lights in Walmart are too bright and they buzz
 
-there are no affordable local grocery stores in my city, they died out to Walmart and it's like before I was born 
+there are no affordable local grocery stores in my city, they died out to Walmart before I was born 
 
 every brand of bread has way too much sugar and it aggravates my ibs
 
